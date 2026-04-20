@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '../../ui/button'
 import {
   Sheet,
@@ -11,6 +11,7 @@ import {
 } from '../../ui/sheet'
 import { cn } from '@/lib/utils'
 import logo from '@/assets/logo-light.png'
+import logoMark from '@/assets/logo.png'
 
 const navLinks = [
   { href: '/features', label: 'Platform' },
@@ -40,11 +41,11 @@ export function SiteNav() {
           : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto px-4 py-4 relative flex items-center">
+      <div className="container mx-auto px-4 py-3 md:py-4 relative flex items-center">
 
         {/* Logo (Left) */}
         <Link to="/" className="inline-flex items-center">
-          <img src={logo} alt="StatTarian" className="h-8 w-auto" />
+          <img src={logo} alt="StatTarian" className="h-6 md:h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation (Perfectly Centered) */}
@@ -65,52 +66,74 @@ export function SiteNav() {
           ))}
         </div>
 
-        {/* CTA Button (Right) */}
+        {/* CTA Button (Right — desktop) */}
         <div className="hidden md:block ml-auto">
           <Button asChild>
             <Link to="/contact">Book a Demo</Link>
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Trigger */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" aria-label="Open menu" className="md:hidden ml-auto">
-              <Menu className="h-6 w-6" />
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Open menu"
+              className="md:hidden ml-auto text-foreground"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-[300px]">
+          <SheetContent side="right" className="w-[280px] flex flex-col bg-background border-border">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <SheetDescription className="sr-only">
               Browse site pages and book a demo
             </SheetDescription>
 
-            <div className="flex flex-col gap-6 mt-8">
-              <img src={logo} alt="StatTarian" className="h-7 w-auto" />
+            {/* Sheet Header */}
+            <div className="flex flex-col items-center gap-1 pt-8 pb-6 border-b border-border">
+              <img src={logoMark} alt="StatTarian" className="h-12 w-auto mb-2" />
+              <p
+                className="text-base font-bold text-foreground"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                statTarian
+              </p>
+              <p className="text-xs text-muted-foreground tracking-widest uppercase">
+                Football. Organised.
+              </p>
+            </div>
 
+            {/* Nav Links */}
+            <div className="flex flex-col gap-1 py-6 flex-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'text-lg font-medium transition-colors',
+                    'px-4 py-3 rounded-lg text-base font-medium transition-colors',
                     location.pathname === link.href
-                      ? 'text-accent'
-                      : 'text-foreground hover:text-accent'
+                      ? 'text-accent bg-primary/10'
+                      : 'text-foreground hover:text-accent hover:bg-primary/5'
                   )}
                 >
                   {link.label}
                 </Link>
               ))}
+            </div>
 
-              <Button asChild className="mt-4">
+            {/* CTA at bottom */}
+            <div className="pb-8">
+              <Button asChild className="w-full" size="lg">
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>
                   Book a Demo
                 </Link>
               </Button>
             </div>
+
           </SheetContent>
         </Sheet>
       </div>

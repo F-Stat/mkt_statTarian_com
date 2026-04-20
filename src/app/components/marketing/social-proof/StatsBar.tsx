@@ -9,7 +9,6 @@ interface StatItem {
   label: string
   subtitle: string
   icon: React.ElementType
-  isPercentage?: boolean
 }
 
 const stats: StatItem[] = [
@@ -49,10 +48,13 @@ function StatCounter({ stat }: { stat: StatItem }) {
   const Icon = stat.icon
 
   return (
-    <div ref={ref} className="flex flex-col items-center text-center gap-4">
-      <Icon className="w-10 h-10 text-primary opacity-80" strokeWidth={1.5} />
+    <div ref={ref} className="flex flex-col items-center text-center gap-3 md:gap-4">
+      {/* Icon circle */}
+      <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+        <Icon className="w-5 h-5 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
+      </div>
       <div
-        className="text-6xl font-black text-foreground leading-none"
+        className="text-4xl md:text-6xl font-black text-foreground leading-none"
         style={{ fontFamily: 'var(--font-display)' }}
       >
         {count}{stat.suffix}
@@ -64,7 +66,7 @@ function StatCounter({ stat }: { stat: StatItem }) {
         {stat.label}
       </div>
       <div
-        className="text-sm italic text-muted-foreground"
+        className="text-xs md:text-sm italic text-muted-foreground"
         style={{ fontFamily: 'var(--font-body)' }}
       >
         {stat.subtitle}
@@ -75,9 +77,9 @@ function StatCounter({ stat }: { stat: StatItem }) {
 
 export function StatsBar() {
   return (
-    <div className="w-full py-20 bg-background border-y border-border">
+    <div className="w-full py-12 md:py-20 bg-background border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <StatCounter key={index} stat={stat} />
           ))}

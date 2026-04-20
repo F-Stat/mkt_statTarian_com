@@ -5,14 +5,14 @@ const words = ['Organise.', 'Simplify.', 'Empower.']
 export function HeroWordReveal({ onComplete }: { onComplete: () => void }) {
   return (
     <motion.div
-      className="fixed inset-0 flex items-center justify-center bg-brand-900 z-50"
+      className="fixed inset-0 flex items-center justify-center bg-brand-900 z-50 px-4"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 1.6, duration: 0.4 }}
       onAnimationComplete={onComplete}
     >
       <motion.div
-        className="flex flex-col items-center gap-6"
+        className="flex flex-col items-center gap-3 md:gap-6"
         variants={{
           animate: {
             transition: {
@@ -26,7 +26,7 @@ export function HeroWordReveal({ onComplete }: { onComplete: () => void }) {
         {words.map((word, index) => (
           <motion.span
             key={word}
-            className={`font-display font-black text-7xl md:text-9xl lg:text-[8rem] leading-none ${
+            className={`font-display font-black text-5xl sm:text-7xl md:text-9xl lg:text-[8rem] leading-none ${
               index === words.length - 1 ? 'text-primary' : 'text-foreground'
             }`}
             style={{ fontFamily: 'var(--font-display)' }}

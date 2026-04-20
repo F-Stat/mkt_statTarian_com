@@ -72,42 +72,50 @@ const platforms = [
     description:
       "A three-pillar learning environment covering Player Development, Safeguarding Education, and Life Skills. Multi-format content, age-gated delivery, and FAW compliance auto-logging per player.",
   },
-];
+]
+
+const navButtonClass =
+  "absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-transparent flex items-center justify-center text-foreground hover:opacity-80 transition-opacity shadow-lg"
 
 export function PersonaSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", slidesToScroll: 1, containScroll: false },
     [Autoplay({ delay: 3000, stopOnInteraction: true })],
-  );
+  )
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4">
+
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16 space-y-4"
+          className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p
-            className="text-sm md:text-base uppercase tracking-[0.2em] text-primary font-semibold"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Academy Management Tools
-          </p>
-
+          <div>
+            <span
+              className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
+              style={{
+                fontFamily: "var(--font-heading)",
+                backgroundColor: 'var(--color-brand-700)',
+              }}
+            >
+              Academy Management Tools
+            </span>
+          </div>
           <h2
-            className="text-4xl md:text-5xl font-bold"
+            className="text-3xl md:text-5xl font-bold"
             style={{ fontFamily: "var(--font-display)" }}
           >
             All your academy needs. One connected platform.
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
             statTarian was built specifically for football academies and youth
             development programmes — cloud-based, multi-role, and designed
             around the real demands of modern academy operations.
@@ -116,25 +124,28 @@ export function PersonaSection() {
 
         {/* Slider + Nav */}
         <div className="relative">
+
           {/* Prev Button */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors shadow-lg"
+            className={`${navButtonClass} -left-3 md:-left-5`}
+            style={{ backgroundColor: 'var(--color-brand-700)' }}
             aria-label="Previous"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
           </button>
 
           {/* Next Button */}
           <button
             onClick={scrollNext}
-            className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors shadow-lg"
+            className={`${navButtonClass} -right-3 md:-right-5`}
+            style={{ backgroundColor: 'var(--color-brand-700)' }}
             aria-label="Next"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
           </button>
 
-          {/* Carousel */}
+          {/* Carousel — 1 card on mobile, 3 on desktop */}
           <div
             className="overflow-hidden cursor-grab active:cursor-grabbing px-2"
             ref={emblaRef}
@@ -143,24 +154,24 @@ export function PersonaSection() {
               {platforms.map((item) => (
                 <div
                   key={item.title}
-                  className="flex-none w-full md:w-[calc(33.333%)] pl-6"
+                  className="flex-none w-[85%] md:w-[calc(33.333%)] pl-4 md:pl-6"
                 >
                   <Link to="/features">
-                    <div className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col gap-6 hover:border-primary transition-colors group">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                        <item.icon className="h-6 w-6 text-primary" />
+                    <div className="bg-card border border-border rounded-2xl p-5 md:p-8 h-full flex flex-col gap-4 md:gap-6 hover:border-primary transition-colors group">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <item.icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
                       <h3
-                        className="text-xl font-bold"
+                        className="text-lg md:text-xl font-bold"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground flex-1 text-sm leading-relaxed">
+                      <p className="text-muted-foreground flex-1 text-xs md:text-sm leading-relaxed">
                         {item.description}
                       </p>
-                      <div className="text-accent text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                        Learn more <ChevronRight className="h-4 w-4" />
+                      <div className="text-accent text-xs md:text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Learn more <ChevronRight className="h-3 w-3 md:h-4 md:w-4" />
                       </div>
                     </div>
                   </Link>
@@ -169,7 +180,8 @@ export function PersonaSection() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
-  );
+  )
 }

@@ -19,7 +19,7 @@ export function HeroSection() {
         animate={{ opacity: showMain ? 1 : 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
       >
-        {/* Background Image — shifted up */}
+        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
@@ -31,11 +31,12 @@ export function HeroSection() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-900/60 to-brand-900/90" />
 
-        {/* Radial vignette for text clarity */}
+        {/* Radial vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.85)_70%)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative container mx-auto px-4 pt-8 pb-32 flex flex-col items-center text-center gap-6">
+        <div className="relative container mx-auto px-4 pt-8 pb-32 flex flex-col items-center text-center gap-4 md:gap-6">
+
           {/* Logo Mark + Brand Name + Tagline */}
           <motion.div
             className="flex flex-col items-center gap-0"
@@ -46,16 +47,16 @@ export function HeroSection() {
             <img
               src={logoMark}
               alt="StatTarian"
-              className="h-40 w-auto mx-auto"
+              className="h-20 md:h-40 w-auto mx-auto"
             />
             <p
-              className="text-foreground text-3xl font-bold tracking-wide"
+              className="text-foreground text-xl md:text-3xl font-bold tracking-wide"
               style={{ fontFamily: "var(--font-display)" }}
             >
               statTarian
             </p>
             <p
-              className="text-foreground/70 text-base tracking-wide"
+              className="text-foreground/70 text-sm md:text-base tracking-wide"
               style={{ fontFamily: "var(--font-body)" }}
             >
               Football. Organised.
@@ -64,7 +65,7 @@ export function HeroSection() {
 
           {/* Heading */}
           <motion.h1
-            className="font-black text-5xl md:text-7xl lg:text-7xl leading-tight max-w-4xl"
+            className="font-black text-4xl md:text-6xl lg:text-7xl leading-tight max-w-4xl"
             style={{
               fontFamily: "var(--font-display)",
               textShadow: "0 2px 24px rgba(0,0,0,0.8)",
@@ -78,7 +79,7 @@ export function HeroSection() {
             <span className="text-primary">One Platform.</span>
           </motion.h1>
 
-          {/* Subheading with improved clarity */}
+          {/* Subheading */}
           <motion.div
             className="backdrop-blur-[2px] px-4 py-2 rounded-md"
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +87,7 @@ export function HeroSection() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             <p
-              className="text-lg md:text-xl text-foreground/90 leading-relaxed max-w-3xl font-medium"
+              className="text-base md:text-xl text-foreground/90 leading-relaxed max-w-3xl font-medium"
               style={{
                 fontFamily: "var(--font-body)",
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
@@ -106,10 +107,11 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            <Button size="lg" className="px-12 py-6 text-xl" asChild>
+            <Button size="lg" className="px-8 py-5 text-lg md:px-12 md:py-6 md:text-xl" asChild>
               <Link to="/contact">Get Started</Link>
             </Button>
           </motion.div>
+
         </div>
       </motion.div>
     </>
