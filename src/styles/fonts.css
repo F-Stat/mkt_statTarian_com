@@ -1,0 +1,12 @@
+/* StatTarian Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Saira+Semi+Condensed:wght@600;700&family=Exo+2:wght@400;500;600&display=swap');
+
+:root {
+  --font-family-display: 'Orbitron', system-ui, sans-serif;
+  --font-family-heading: 'Saira Semi Condensed', system-ui, sans-serif;
+  --font-family-body: 'Exo 2', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-body);
+}

@@ -1,0 +1,174 @@
+@custom-variant dark (&:is(.dark *));
+
+/* StatTarian Brand Base Tokens */
+:root {
+  /* Brand Colors */
+  --color-brand-900: #061E29;
+  --color-brand-700: #1D546D;
+  --color-brand-500: #5F9598;
+  --color-brand-50: #F3F4F4;
+
+  /* Neutral Colors */
+  --color-neutral-900: #0D0D0D;
+  --color-neutral-700: #2A2A2A;
+  --color-neutral-500: #6B6B6B;
+  --color-neutral-300: #D1D1D1;
+  --color-neutral-50: #F9F9F9;
+  --color-neutral-0: #FFFFFF;
+
+  /* Light Mode Semantic Tokens */
+  --font-size: 16px;
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-900);
+  --card: var(--color-neutral-0);
+  --card-foreground: var(--color-neutral-900);
+  --popover: var(--color-neutral-0);
+  --popover-foreground: var(--color-neutral-900);
+  --primary: var(--color-brand-700);
+  --primary-foreground: var(--color-neutral-0);
+  --secondary: var(--color-brand-50);
+  --secondary-foreground: var(--color-neutral-900);
+  --muted: var(--color-neutral-50);
+  --muted-foreground: var(--color-neutral-700);
+  --accent: var(--color-brand-500);
+  --accent-foreground: var(--color-brand-900);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: var(--color-neutral-300);
+  --input: transparent;
+  --input-background: var(--color-neutral-50);
+  --switch-background: var(--color-neutral-300);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--color-brand-500);
+  --radius: 0.5rem;
+}
+
+/* Dark Mode - Default for StatTarian Marketing */
+.dark {
+  --background: var(--color-brand-900);
+  --foreground: var(--color-neutral-50);
+  --card: var(--color-neutral-700);
+  --card-foreground: var(--color-neutral-50);
+  --popover: var(--color-neutral-700);
+  --popover-foreground: var(--color-neutral-50);
+  --primary: var(--color-brand-500);
+  --primary-foreground: var(--color-brand-900);
+  --secondary: var(--color-brand-700);
+  --secondary-foreground: var(--color-neutral-50);
+  --muted: var(--color-neutral-700);
+  --muted-foreground: var(--color-neutral-300);
+  --accent: var(--color-brand-700);
+  --accent-foreground: var(--color-neutral-50);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: var(--color-neutral-700);
+  --input: var(--color-neutral-700);
+  --ring: var(--color-brand-500);
+  --switch-background: var(--color-neutral-700);
+}
+
+@theme inline {
+  /* Semantic color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Font families - bridged from fonts.css into Tailwind utilities */
+  --font-display: var(--font-family-display);
+  --font-heading: var(--font-family-heading);
+  --font-body: var(--font-family-body);
+
+  /* Animations */
+  --animate-marquee: marquee 24s linear infinite;
+}
+
+/* Marquee Animation for Infinite Scroll */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
