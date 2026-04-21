@@ -1,15 +1,19 @@
-import { useState } from "react"
-import { PricingTable } from "../../components/marketing/pricing/PricingTable"
-import { ComparisonTable } from "../../components/marketing/pricing/ComparisonTable"
-import { AnimatedSection } from "../../components/marketing/AnimatedSection"
+import { useState } from "react";
+import { PricingTable } from "../../components/marketing/pricing/PricingTable";
+import { ComparisonTable } from "../../components/marketing/pricing/ComparisonTable";
+import { AnimatedSection } from "../../components/marketing/AnimatedSection";
+import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../components/ui/accordion"
+} from "../../components/ui/accordion";
 
-type TierKey = "starter" | "pro" | "enterprise"
+type TierKey = "starter" | "pro" | "enterprise";
+
+const pillClass =
+  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
 const faqs = [
   {
@@ -42,31 +46,41 @@ const faqs = [
     answer:
       "Yes, data migration support is available on Pro and Enterprise plans. Our team will work with you to map and import your existing data from current platforms.",
   },
-]
+];
 
 export function Pricing() {
-  const [recommendedTier] = useState<TierKey>("pro")
+  const [recommendedTier] = useState<TierKey>("pro");
 
   return (
     <main className="pt-24">
-
-      {/* Page Hero */}
-      <section className="py-16 bg-background">
+      {/* Hero */}
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center max-w-4xl mx-auto space-y-6">
+            <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6">
+              <div>
+                <span
+                  className={pillClass}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
+                >
+                  Pricing
+                </span>
+              </div>
               <h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Transparent pricing for every academy.
               </h1>
-
               <p
-                className="text-xl text-muted-foreground"
+                className="text-base md:text-xl text-muted-foreground"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Choose the plan that fits your academy size, structure, and ambitions.
+                Choose the plan that fits your academy size, structure, and
+                ambitions.
               </p>
             </div>
           </AnimatedSection>
@@ -77,29 +91,60 @@ export function Pricing() {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <PricingTable recommendedTier={recommendedTier} />
-
-          <div className="text-center mt-8 text-sm text-muted-foreground">
-            <p>
-              Pricing is indicative. Contact us for a tailored quote based on your academy's needs.
-            </p>
-          </div>
         </div>
       </section>
 
       {/* Comparison Table */}
-      <ComparisonTable />
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-card">
+      <section className="py-12 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4">
-
           <AnimatedSection>
-            <h2
-              className="text-4xl md:text-5xl font-bold text-center mb-12"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Frequently Asked Questions
-            </h2>
+            <div className="text-center mb-10 md:mb-16 space-y-4">
+              <div>
+                <span
+                  className={pillClass}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
+                >
+                  Compare Plans
+                </span>
+              </div>
+              <h2
+                className="text-3xl md:text-5xl font-bold"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Everything, side by side.
+              </h2>
+            </div>
+          </AnimatedSection>
+          <ComparisonTable />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-12 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="text-center mb-10 md:mb-16 space-y-4">
+              <div>
+                <span
+                  className={pillClass}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
+                >
+                  FAQ
+                </span>
+              </div>
+              <h2
+                className="text-3xl md:text-5xl font-bold"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Frequently asked questions.
+              </h2>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
@@ -118,10 +163,10 @@ export function Pricing() {
               </Accordion>
             </div>
           </AnimatedSection>
-
         </div>
       </section>
 
+      <DemoCtaSection />
     </main>
-  )
+  );
 }

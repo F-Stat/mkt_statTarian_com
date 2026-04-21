@@ -11,9 +11,9 @@ interface DemoCtaSectionProps {
 }
 
 export function DemoCtaSection({
-  heading = "See statTarian in action",
+  heading = "Ready to see it in action?",
   subheading = "Book a 30-minute demo tailored to your academy's needs.",
-  ctaLabel = "Request a Demo",
+  ctaLabel = "Contact Us",
   ctaHref = "/contact",
 }: DemoCtaSectionProps) {
   return (

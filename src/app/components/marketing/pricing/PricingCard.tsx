@@ -28,21 +28,20 @@ export function PricingCard({
   tier,
   recommended = false,
 }: PricingCardProps) {
-  const [amount, cadence] = price.split('/')
+  const isContactUs = price === "Contact us"
+  const [amount, cadence] = isContactUs ? [price, null] : price.split('/')
 
   return (
     <div
       className={cn(
-        "relative border rounded-2xl p-8 flex flex-col transition-all hover:shadow-xl hover:-translate-y-1",
+        "relative border rounded-2xl p-8 flex flex-col w-full h-full transition-all hover:shadow-xl hover:-translate-y-1",
         tierGradients[tier],
-        recommended
-          ? "border-primary shadow-lg scale-[1.03]"
-          : "border-border"
+        recommended ? "border-primary shadow-lg" : "border-border"
       )}
     >
       {recommended && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
-          Recommended for you
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground whitespace-nowrap">
+          Recommended
         </Badge>
       )}
 
@@ -58,20 +57,37 @@ export function PricingCard({
       </div>
 
       {/* Price */}
-      <div className="mb-6">
-        <div className="flex items-end gap-1">
-          <span
-            className="text-4xl font-bold text-primary"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {amount}
-          </span>
-          <span className="text-sm text-muted-foreground mb-1">
-            /{cadence}
-          </span>
-        </div>
-
-        <p className="text-sm text-muted-foreground mt-1">Paid annually (save 25%)</p>
+      <div className="mb-6 min-h-[72px]">
+        {isContactUs ? (
+          <>
+            <p
+              className="text-4xl font-bold text-primary"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Let's talk
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Tailored to your organisation
+            </p>
+          </>
+        ) : (
+          <>
+            <div className="flex items-end gap-1">
+              <span
+                className="text-4xl font-bold text-primary"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {amount}
+              </span>
+              <span className="text-sm text-muted-foreground mb-1">
+                /{cadence}
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-1">
+              Paid annually (save 25%)
+            </p>
+          </>
+        )}
       </div>
 
       {/* Features */}
@@ -86,7 +102,9 @@ export function PricingCard({
 
       {/* CTA */}
       <Button asChild className="w-full">
-        <Link to={`/contact?plan=${tier}`}>Get Started</Link>
+        <Link to={isContactUs ? "/contact?plan=elite" : `/contact?plan=${tier}`}>
+          {isContactUs ? "Contact Us" : "Get Started"}
+        </Link>
       </Button>
     </div>
   )
