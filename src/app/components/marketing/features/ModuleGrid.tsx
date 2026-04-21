@@ -156,45 +156,41 @@ export function ModuleGrid({ selectedRole }: ModuleGridProps) {
   )
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16 md:space-y-24">
       {filteredModules.map((module, index) => {
         const isEven = index % 2 === 0
 
         return (
-          <AnimatedSection
-            key={module.id}
-            id={module.id}
-            className={cn(!filteredModules.includes(module) && 'hidden')}
-          >
+          <AnimatedSection key={module.id} id={module.id}>
             <div
               className={cn(
-                'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center',
+                'grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center',
                 !isEven && 'lg:grid-flow-dense'
               )}
             >
               {/* Content */}
-              <div className={cn('space-y-6', !isEven && 'lg:col-start-2')}>
+              <div className={cn('space-y-5 md:space-y-6', !isEven && 'lg:col-start-2')}>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <module.icon className="h-6 w-6 text-primary" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <module.icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                   </div>
                   <h3
-                    className="text-3xl font-bold"
+                    className="text-2xl md:text-3xl font-bold"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {module.name}
                   </h3>
                 </div>
 
-                <p className="text-lg text-muted-foreground">
+                <p className="text-base md:text-lg text-muted-foreground">
                   {module.description}
                 </p>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {module.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-foreground"
+                      className="flex items-start gap-3 text-sm md:text-base text-foreground"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                       {feature}
@@ -203,11 +199,18 @@ export function ModuleGrid({ selectedRole }: ModuleGridProps) {
                 </ul>
               </div>
 
-              {/* Mockup */}
+              {/* Placeholder — styled with icon instead of text */}
               <div className={cn(!isEven && 'lg:col-start-1 lg:row-start-1')}>
-                <div className="aspect-video rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground text-sm">
-                  {/* TODO: Replace with real asset */}
-                  [Module Screenshot — {module.name}]
+                <div className="aspect-video rounded-xl border border-border bg-card flex flex-col items-center justify-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <module.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
+                  </div>
+                  <p
+                    className="text-sm text-muted-foreground uppercase tracking-widest"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
+                    {module.name} Module
+                  </p>
                 </div>
               </div>
             </div>

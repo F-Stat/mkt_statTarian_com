@@ -8,133 +8,146 @@ export function Terms() {
 
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing and using the StatTarian website and services, you accept
-            and agree to be bound by these Terms of Service. If you do not agree
-            to these terms, please do not use our services.
+            By accessing or using the statTarian website, platform, or related services
+            (“Services”), you agree to be bound by these Terms of Service (“Terms”).
+            If you do not agree to these Terms, you must not use the Services.
           </p>
 
-          <h2>2. Service Description</h2>
+          <h2>2. About statTarian</h2>
           <p>
-            StatTarian provides a multi-tenant SaaS platform for Welsh football
-            academy management, including but not limited to:
+            statTarian Limited (“statTarian”, “we”, “us”, “our”) provides a multi‑tenant
+            SaaS platform designed for football clubs and academies to manage player
+            development, performance data, safeguarding workflows, video analysis, and
+            operational processes.
+          </p>
+
+          <h2>3. Role of Clubs and Users</h2>
+          <p>
+            When a Club subscribes to the Platform, it becomes responsible for managing
+            access to its environment, including creating user accounts for coaches,
+            staff, parents, and players. Clubs are solely responsible for ensuring that:
           </p>
           <ul>
-            <li>Player registration and squad management</li>
-            <li>Performance tracking and development planning</li>
-            <li>Video library and analysis tools</li>
-            <li>Safeguarding and welfare management</li>
-            <li>Communication and reporting tools</li>
+            <li>Users are authorised to access the Platform</li>
+            <li>Data entered into the Platform is accurate and lawful</li>
+            <li>Safeguarding and access‑control decisions comply with Club policies</li>
           </ul>
 
-          <h2>3. Permitted Use</h2>
-          <p>You agree to use StatTarian services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+          <h2>4. Permitted Use</h2>
+          <p>You agree to use the Services only for lawful purposes. You must not:</p>
           <ul>
             <li>Violate any applicable laws or regulations</li>
-            <li>Infringe upon the rights of others</li>
-            <li>
-              Transmit any malicious code, viruses, or harmful materials
-            </li>
-            <li>Attempt to gain unauthorised access to our systems</li>
-            <li>
-              Use the service to harass, abuse, or harm others
-            </li>
-            <li>
-              Reverse engineer, decompile, or disassemble any part of the service
-            </li>
+            <li>Upload unlawful, harmful, or defamatory content</li>
+            <li>Attempt to gain unauthorised access to any system or account</li>
+            <li>Interfere with or disrupt the integrity of the Platform</li>
+            <li>Reverse engineer, decompile, or copy any part of the Platform</li>
+            <li>Use the Platform to harass, abuse, or harm others</li>
           </ul>
 
-          <h2>4. Intellectual Property</h2>
+          <h2>5. Intellectual Property</h2>
           <p>
-            All content, features, and functionality of the StatTarian platform,
-            including but not limited to text, graphics, logos, software, and
-            design, are the exclusive property of StatTarian Ltd and are protected
-            by copyright, trademark, and other intellectual property laws.
+            All content, software, design, branding, and functionality within the
+            statTarian Platform are the exclusive property of statTarian Limited and
+            are protected by copyright, trademark, and other intellectual property laws.
           </p>
           <p>
-            You may not reproduce, distribute, modify, or create derivative works
-            without our express written permission.
+            No rights or licences are granted except those expressly provided in these
+            Terms or in a written agreement with statTarian.
           </p>
 
-          <h2>5. User Accounts</h2>
+          <h2>6. User Accounts</h2>
           <p>
-            To access certain features of StatTarian, you may be required to
-            create an account. You are responsible for:
+            To access certain features, you may be required to create an account. You
+            are responsible for:
           </p>
           <ul>
-            <li>Maintaining the confidentiality of your account credentials</li>
-            <li>All activities that occur under your account</li>
-            <li>Notifying us immediately of any unauthorised use</li>
+            <li>Maintaining the confidentiality of your login credentials</li>
+            <li>Ensuring your account is used only by you</li>
+            <li>Notifying your Club or statTarian of any unauthorised access</li>
           </ul>
 
-          <h2>6. Data and Privacy</h2>
+          <h2>7. Data Protection and Privacy</h2>
           <p>
-            Your use of StatTarian is also governed by our Privacy Policy. We are
-            committed to protecting your personal data in accordance with UK GDPR
-            and applicable data protection laws.
+            Your use of the Platform is governed by our Privacy Policy. For Club data
+            processed within the Platform, statTarian acts as a Data Processor and the
+            Club acts as the Data Controller. statTarian processes data only on the
+            Club’s documented instructions.
           </p>
 
-          <h2>7. Subscription and Payment</h2>
+          <h2>8. Subscription, Licensing, and Payment</h2>
           <p>
-            Access to the full StatTarian platform requires a paid subscription.
-            Pricing, billing terms, and cancellation policies will be provided
-            separately upon subscription.
+            Access to the full Platform requires a paid subscription. Subscription
+            terms, pricing, billing cycles, and cancellation policies are provided
+            separately in your subscription agreement or order form.
+          </p>
+          <p>
+            statTarian may suspend access for non‑payment or breach of these Terms.
           </p>
 
-          <h2>8. Service Availability</h2>
+          <h2>9. Service Availability and Updates</h2>
           <p>
-            While we strive to provide uninterrupted service, we do not guarantee
-            that StatTarian will be available at all times. We reserve the right
-            to modify, suspend, or discontinue any part of the service with or
-            without notice.
+            We aim to provide reliable and continuous service but do not guarantee
+            uninterrupted availability. We may modify, update, or discontinue parts of
+            the Platform at any time to improve functionality, security, or performance.
           </p>
 
-          <h2>9. Limitation of Liability</h2>
+          <h2>10. Warranties and Disclaimers</h2>
           <p>
-            To the maximum extent permitted by law, StatTarian Ltd shall not be
-            liable for any indirect, incidental, special, consequential, or
-            punitive damages arising from your use of or inability to use the
-            service.
+            The Platform is provided on an “as is” and “as available” basis. To the
+            fullest extent permitted by law, statTarian disclaims all warranties,
+            whether express or implied, including fitness for a particular purpose,
+            merchantability, and non‑infringement.
           </p>
 
-          <h2>10. Indemnification</h2>
+          <h2>11. Limitation of Liability</h2>
           <p>
-            You agree to indemnify and hold harmless StatTarian Ltd, its officers,
-            directors, employees, and agents from any claims, damages, losses, or
-            expenses arising from your use of the service or violation of these
-            Terms.
+            To the maximum extent permitted by law, statTarian Limited shall not be
+            liable for any indirect, incidental, special, consequential, exemplary, or
+            punitive damages, including loss of profits, data, or goodwill.
+          </p>
+          <p>
+            statTarian’s total aggregate liability arising out of or relating to the
+            Services shall not exceed the amount paid by the subscribing Club in the
+            twelve (12) months preceding the claim.
           </p>
 
-          <h2>11. Termination</h2>
+          <h2>12. Indemnification</h2>
           <p>
-            We reserve the right to terminate or suspend your access to StatTarian
-            at any time, with or without cause, with or without notice, for any
-            reason including breach of these Terms.
+            You agree to indemnify and hold harmless statTarian Limited, its officers,
+            employees, and agents from any claims, damages, or losses arising from:
+          </p>
+          <ul>
+            <li>Your breach of these Terms</li>
+            <li>Your misuse of the Platform</li>
+            <li>Your violation of applicable laws or third‑party rights</li>
+          </ul>
+
+          <h2>13. Termination</h2>
+          <p>
+            We may suspend or terminate access to the Platform at any time if you or
+            your Club breach these Terms, fail to pay subscription fees, or engage in
+            unlawful or harmful activity.
           </p>
 
-          <h2>12. Governing Law</h2>
+          <h2>14. Governing Law</h2>
           <p>
-            These Terms are governed by and construed in accordance with the laws
-            of England and Wales. Any disputes arising from these Terms shall be
-            subject to the exclusive jurisdiction of the courts of England and
-            Wales.
+            These Terms are governed by the laws of England and Wales. Any disputes
+            shall be resolved exclusively in the courts of England and Wales.
           </p>
 
-          <h2>13. Changes to Terms</h2>
+          <h2>15. Changes to These Terms</h2>
           <p>
-            We may update these Terms of Service from time to time. Changes will
-            be posted on this page with an updated "Last updated" date. Your
-            continued use of StatTarian after changes are posted constitutes
-            acceptance of the updated Terms.
+            We may update these Terms from time to time. Changes will be posted on this
+            page with an updated “Last updated” date. Continued use of the Platform
+            constitutes acceptance of the revised Terms.
           </p>
 
-          <h2>14. Contact Information</h2>
+          <h2>16. Contact Information</h2>
           <p>
-            If you have any questions about these Terms of Service, please contact
-            us at:
+            For questions about these Terms, please contact:
           </p>
           <p>
-            Email: legal@stattarian.com
-            <br />
+            Email: legal@stattarian.com<br />
             Address: [Placeholder Address, Wales, UK]
           </p>
         </article>

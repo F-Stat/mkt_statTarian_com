@@ -72,19 +72,22 @@ const platforms = [
     description:
       "A three-pillar learning environment covering Player Development, Safeguarding Education, and Life Skills. Multi-format content, age-gated delivery, and FAW compliance auto-logging per player.",
   },
-]
+];
 
 const navButtonClass =
-  "absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-transparent flex items-center justify-center text-foreground hover:opacity-80 transition-opacity shadow-lg"
+  "absolute top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full border border-transparent flex items-center justify-center text-foreground hover:opacity-80 transition-opacity shadow-lg";
+
+const pillClass =
+  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
 export function PersonaSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", slidesToScroll: 1, containScroll: false },
     [Autoplay({ delay: 3000, stopOnInteraction: true })],
-  )
+  );
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
     <section className="py-12 md:py-24 bg-background">
@@ -100,10 +103,10 @@ export function PersonaSection() {
         >
           <div>
             <span
-              className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
+              className={pillClass}
               style={{
                 fontFamily: "var(--font-heading)",
-                backgroundColor: 'var(--color-brand-700)',
+                backgroundColor: "var(--color-brand-700)",
               }}
             >
               Academy Management Tools
@@ -129,7 +132,7 @@ export function PersonaSection() {
           <button
             onClick={scrollPrev}
             className={`${navButtonClass} -left-3 md:-left-5`}
-            style={{ backgroundColor: 'var(--color-brand-700)' }}
+            style={{ backgroundColor: "var(--color-brand-700)" }}
             aria-label="Previous"
           >
             <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
@@ -139,13 +142,13 @@ export function PersonaSection() {
           <button
             onClick={scrollNext}
             className={`${navButtonClass} -right-3 md:-right-5`}
-            style={{ backgroundColor: 'var(--color-brand-700)' }}
+            style={{ backgroundColor: "var(--color-brand-700)" }}
             aria-label="Next"
           >
             <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
           </button>
 
-          {/* Carousel — 1 card on mobile, 3 on desktop */}
+          {/* Carousel */}
           <div
             className="overflow-hidden cursor-grab active:cursor-grabbing px-2"
             ref={emblaRef}
@@ -170,8 +173,10 @@ export function PersonaSection() {
                       <p className="text-muted-foreground flex-1 text-xs md:text-sm leading-relaxed">
                         {item.description}
                       </p>
-                      <div className="text-accent text-xs md:text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                        Learn more <ChevronRight className="h-3 w-3 md:h-4 md:w-4" />
+                      <div className="mt-auto pt-2">
+                        <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-primary/40 text-primary text-xs md:text-sm font-semibold group-hover:bg-primary/10 group-hover:border-primary transition-all">
+                          Learn more <ChevronRight className="h-3 w-3 md:h-4 md:w-4" />
+                        </span>
                       </div>
                     </div>
                   </Link>
@@ -183,5 +188,5 @@ export function PersonaSection() {
 
       </div>
     </section>
-  )
+  );
 }

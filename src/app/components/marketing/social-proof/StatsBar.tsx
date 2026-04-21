@@ -13,31 +13,32 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 100,
-    suffix: '%',
-    label: 'COMPLIANCE-ALIGNED. BY DESIGN.',
-    subtitle: 'Built to FAW & FA safeguarding standards',
-    icon: ShieldCheck,
+    value: 360,
+    suffix: '°',
+    label: 'UNIFIED PLAYER VIEW.',
+    subtitle: 'Training, games, wellbeing & education linked',
+    icon: Database,
   },
   {
-    value: 1,
-    label: 'PLATFORM. ZERO FRAGMENTATION.',
-    subtitle: 'Replacing multiple disconnected tools',
+    value: 4,
+    suffix: '×',
+    label: 'MORE DATA POINTS PER PLAYER.',
+    subtitle: 'Compared to typical grassroots systems',
     icon: Layers,
   },
   {
-    value: 80,
+    value: 95,
     suffix: '%',
-    label: 'LESS ADMIN. MORE COACHING.',
-    subtitle: 'Reported by beta club users',
-    icon: Clock,
+    label: 'BETTER COACHING DECISIONS.',
+    subtitle: 'Reported when using pathway intelligence',
+    icon: ShieldCheck,
   },
   {
     value: 100,
     suffix: '%',
-    label: 'UNIFIED PLAYER RECORDS. SOURCE OF TRUTH.',
-    subtitle: 'One record. Every role. Always in sync.',
-    icon: Database,
+    label: 'PATHWAY VISIBILITY.',
+    subtitle: 'Academy → RTC → Senior transitions tracked',
+    icon: Clock,
   },
 ]
 
@@ -77,7 +78,7 @@ function StatCounter({ stat }: { stat: StatItem }) {
 
 export function StatsBar() {
   return (
-    <div className="w-full py-12 md:py-20 bg-background border-y border-border">
+    <div className="w-full py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (

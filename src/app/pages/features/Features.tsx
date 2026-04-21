@@ -10,18 +10,29 @@ export function Features() {
   return (
     <main className="pt-24">
       {/* Page Hero */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center max-w-4xl mx-auto space-y-6">
+            <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6">
+              <div>
+                <span
+                  className="inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    backgroundColor: 'var(--color-brand-700)',
+                  }}
+                >
+                  The Platform
+                </span>
+              </div>
               <h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 Everything your academy needs, in one place.
               </h1>
               <p
-                className="text-xl text-muted-foreground"
+                className="text-base md:text-xl text-muted-foreground"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 Eight purpose-built modules. One unified platform.
@@ -32,14 +43,14 @@ export function Features() {
       </section>
 
       {/* Role Filter Bar */}
-      <section className="py-8 bg-card border-y border-border sticky top-[73px] z-40">
+      <section className="py-4 md:py-8 bg-card border-y border-border sticky top-[57px] md:top-[73px] z-40">
         <div className="container mx-auto px-4">
           <RoleFilterBar onFilterChange={setSelectedRole} />
         </div>
       </section>
 
       {/* Module Grid */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <ModuleGrid selectedRole={selectedRole} />
         </div>

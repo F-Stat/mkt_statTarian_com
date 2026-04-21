@@ -71,7 +71,7 @@ export function PricingCard({
           </span>
         </div>
 
-        <p className="text-sm text-muted-foreground mt-1">Get a quote</p>
+        <p className="text-sm text-muted-foreground mt-1">Paid annually (save 25%)</p>
       </div>
 
       {/* Features */}
