@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RolesMarqueeBar } from "../../components/marketing/social-proof/RolesMarqueeBar";
 import { PricingTable } from "../../components/marketing/pricing/PricingTable";
 import { ComparisonTable } from "../../components/marketing/pricing/ComparisonTable";
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
@@ -108,8 +107,6 @@ export function Pricing() {
           </AnimatedSection>
         </div>
       </section>
-
-      <RolesMarqueeBar />
 
       {/* Pricing Table */}
       <section className="py-12 bg-background">

@@ -1,8 +1,12 @@
-import { ShieldCheck, Globe, Lock } from "lucide-react";
+"use client";
+
+import { useRef, useEffect } from "react";
+import { ShieldCheck, Globe, Lock, ChevronLeft, ChevronRight } from "lucide-react";
 import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { motion } from "motion/react";
 import walesImage from "../../../assets/abstract-training.jpg";
+import founderImage from "../../../assets/founder.jpg";
 
 const pillClass =
   "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
@@ -12,19 +16,19 @@ const values = [
     icon: ShieldCheck,
     title: "Player First",
     description:
-      "Every decision starts with one question: does this protect and support the young people in our care? If not, it doesn’t ship.",
+      "We design for the child, not the system. Protection, development, and welfare guide every decision we make.",
   },
   {
     icon: Globe,
     title: "Welsh at Heart",
     description:
-      "Built in Wales, for Wales. Bilingual from day one, aligned with FAW requirements, and shaped by people who understand the pathway.",
+      "A platform shaped by the realities of Welsh football — bilingual, FAW‑aligned, and built by people who’ve lived the pathway.",
   },
   {
     icon: Lock,
     title: "Trust by Design",
     description:
-      "Safeguarding‑centric workflows, role‑based access, and encrypted audit trails form the foundation of the entire platform.",
+      "Safety is engineered into every layer of the platform — from access control to audit trails to the way information flows.",
   },
 ];
 
@@ -57,15 +61,26 @@ const problems = [
   },
 ];
 
-// TODO: Replace with real assets when available
-const HERO_IMAGE = ""; // Aerial or wide-angle pitch shot — matches DemoCtaSection tone
-const FOUNDER_IMAGE = ""; // Headshot of Steve Lloyd
+const HERO_IMAGE = "";
+const FOUNDER_IMAGE = founderImage;
 const WALES_IMAGE = walesImage;
 
 export function About() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!scrollRef.current) return;
+      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="pt-4 md:pt-24">
-      {/* Hero — full-bleed background image with overlay */}
+      {/* Hero */}
       <section
         className="relative py-32 md:py-48 bg-background bg-cover bg-center"
         style={{
@@ -85,7 +100,7 @@ export function About() {
                     backgroundColor: "var(--color-brand-700)",
                   }}
                 >
-                  About StatTarian
+                  About statTarian
                 </span>
               </div>
               <h1
@@ -103,77 +118,77 @@ export function About() {
         </div>
       </section>
 
-      {/* Founder Story */}
-      <section className="py-24 bg-card">
+      {/* Founder Story — mobile spacing tightened */}
+      <section className="pt-16 md:pt-24 pb-24 bg-card">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <AnimatedSection>
-              <div className="space-y-8">
-                <div>
-                  <span
-                    className={pillClass}
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      backgroundColor: "var(--color-brand-700)",
-                    }}
-                  >
-                    From the Founder
-                  </span>
+              <div className="flex flex-col items-center text-center space-y-10">
+                {/* Founder Photo */}
+                <div className="h-40 w-40 rounded-full overflow-hidden bg-muted border border-border shadow-sm ring-2 ring-[var(--color-brand-700)]">
+                  <img
+                    src={FOUNDER_IMAGE}
+                    alt="Steve Lloyd, Founder & CEO of statTarian"
+                    className="h-full w-full object-cover"
+                    onError={(e) => (e.currentTarget.style.display = "none")}
+                  />
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-start">
-                  <div className="h-20 w-20 rounded-full bg-muted overflow-hidden shrink-0 flex items-center justify-center text-2xl font-bold">
-                    {FOUNDER_IMAGE ? (
-                      <img
-                        src={FOUNDER_IMAGE}
-                        alt="Steve Lloyd, Founder & CEO of StatTarian"
-                        className="h-full w-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
-                    ) : (
-                      "SL"
-                    )}
-                  </div>
 
-                  <div className="space-y-5">
-                    <h2
-                      className="text-3xl md:text-4xl font-bold leading-tight"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      "Welsh academies deserved better than a dozen disconnected
-                      tools."
-                    </h2>
+                {/* Quote */}
+                <h2
+                  className="text-3xl md:text-4xl font-bold leading-tight mt-4 mb-6"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  “Welsh academies deserved better — so we built it.”
+                </h2>
 
-                    <p className="text-lg text-muted-foreground">
-                      I’ve spent years inside Welsh academies — seeing the
-                      commitment of coaches, the care for young players, and the
-                      sheer effort required just to keep everything running. But
-                      I also saw the strain: registrations in one place,
-                      schedules somewhere else, welfare notes buried in inboxes,
-                      and no single source of truth.
-                    </p>
+                {/* Divider */}
+                <div className="w-24 h-px bg-border/80 mx-auto mb-2" />
 
-                    <p className="text-lg text-muted-foreground">
-                      StatTarian exists because an academy shouldn’t need
-                      enterprise‑level IT skills to operate safely, clearly, and
-                      compliantly. From FAW COMET integration to bilingual
-                      support, every part of this platform was designed around
-                      the real day‑to‑day reality of Welsh football.
-                    </p>
+                {/* Story */}
+                <div className="max-w-2xl mx-auto space-y-6 text-left md:text-center">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    I’ve spent nearly two decades working at the intersection of
+                    data, technology, and operational design — across
+                    consulting, retail, public sector, education, and sport. But
+                    it was my years inside Welsh football that changed
+                    everything.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    I saw coaches giving everything, young players developing,
+                    and staff doing their best in systems that simply weren’t
+                    built for them. Registrations lived in one place, schedules
+                    in another, welfare notes buried in inboxes, and compliance
+                    scattered across tools that never spoke to each other.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Even with a background in CRM, data architecture, and
+                    process design, it was obvious the academy environment was
+                    being held together by effort, not infrastructure. Welsh
+                    football deserved better.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    statTarian was built to fix that — not as another generic
+                    platform, but as a connected, safeguarding‑first operating
+                    system shaped by people who understand the FAW pathway,
+                    COMET, bilingual requirements, and the day‑to‑day reality of
+                    academies. This isn’t theory or market research; it’s lived
+                    experience turned into a product built for the environment
+                    it serves.
+                  </p>
+                </div>
 
-                    <div className="pt-2">
-                      <p
-                        className="font-semibold"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                      >
-                        Steve Lloyd
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Founder & CEO, StatTarian
-                      </p>
-                    </div>
-                  </div>
+                {/* Signature */}
+                <div className="pt-4 text-center opacity-90 space-y-1">
+                  <p
+                    className="font-semibold"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    Steve Lloyd
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Founder & CEO, statTarian
+                  </p>
                 </div>
               </div>
             </AnimatedSection>
@@ -181,7 +196,7 @@ export function About() {
         </div>
       </section>
 
-      {/* Why Wales — image as right-column accent */}
+      {/* Why Wales */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -207,7 +222,7 @@ export function About() {
                   </h2>
 
                   <p className="text-lg text-muted-foreground">
-                    StatTarian was designed from the ground up for the FAW
+                    statTarian was designed from the ground up for the FAW
                     pathway. That means bilingual Welsh/English support
                     throughout, safeguarding and COMET compliance built into
                     every workflow, and a deep understanding of how Welsh
@@ -263,7 +278,7 @@ export function About() {
                 From chaos to clarity.
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Before StatTarian, Welsh academies were forced to stitch
+                Before statTarian, Welsh academies were forced to stitch
                 together disconnected tools. We replaced all of it with a
                 single, safeguarding‑first operating system.
               </p>
@@ -294,7 +309,7 @@ export function About() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — homepage-style carousel */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
@@ -314,33 +329,82 @@ export function About() {
                 className="text-4xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Our Values
+                What We Stand For.
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-6"
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <value.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "var(--font-heading)" }}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Left arrow (mobile only) */}
+            <button
+              onClick={() =>
+                scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })
+              }
+              className="
+    flex md:hidden absolute left-3 top-1/2 -translate-y-1/2 z-20
+    h-10 w-10 rounded-full bg-[var(--color-brand-700)]
+    text-white items-center justify-center
+    shadow-md active:scale-95 transition
+  "
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+
+            {/* Right arrow (mobile only) */}
+            <button
+              onClick={() =>
+                scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })
+              }
+              className="
+    flex md:hidden absolute right-3 top-1/2 -translate-y-1/2 z-20
+    h-10 w-10 rounded-full bg-[var(--color-brand-700)]
+    text-white items-center justify-center
+    shadow-md active:scale-95 transition
+  "
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+
+            {/* Fade edges */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-background to-transparent md:hidden" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-background to-transparent md:hidden" />
+
+            {/* Scroll container */}
+            <div
+              ref={scrollRef}
+              className="
+                flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar
+                md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:snap-none
+                px-1
+              "
+            >
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  className="
+                    min-w-[85%] snap-center md:min-w-0
+                    bg-card border border-border rounded-2xl p-8 flex flex-col gap-6
+                    shadow-sm
+                  "
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </motion.div>
-            ))}
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <value.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3
+                    className="text-2xl font-bold"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {value.title}
+                  </h3>
+                  <p className="text-muted-foreground">{value.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { ModuleShowcase } from '../../components/marketing/features/ModuleShowcase'
 import { DemoCtaSection } from '../../components/marketing/cta/DemoCtaSection'
 import { AnimatedSection } from '../../components/marketing/AnimatedSection'
+import { RolesMarqueeBar } from "../../components/marketing/RolesMarqueeBar";
 
 export function Features() {
   return (
@@ -37,6 +38,11 @@ export function Features() {
             </div>
           </AnimatedSection>
         </div>
+      </section>
+
+      {/* Roles Marquee — placed immediately after hero */}
+      <section className="bg-background">
+        <RolesMarqueeBar />
       </section>
 
       {/* Module Showcases */}
