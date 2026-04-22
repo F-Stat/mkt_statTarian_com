@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RolesMarqueeBar } from "../../components/marketing/social-proof/RolesMarqueeBar";
 import { PricingTable } from "../../components/marketing/pricing/PricingTable";
 import { ComparisonTable } from "../../components/marketing/pricing/ComparisonTable";
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
@@ -17,34 +18,54 @@ const pillClass =
 
 const faqs = [
   {
-    question: "Does StatTarian integrate with FAW COMET?",
+    question: "Does StatTarian sync with FAW COMET and other governing‑body systems?",
     answer:
-      "Yes, StatTarian has native integration with FAW COMET via an ingestion API, allowing you to automatically sync player registration data.",
+      "Yes. StatTarian has a native integration with FAW COMET via a secure ingestion API, allowing player registration and eligibility data to sync automatically. This removes manual admin work and keeps your squad lists accurate across systems.",
   },
   {
     question: "How is safeguarding data protected?",
     answer:
-      "All safeguarding and welfare data is role-gated with granular access controls. Every access is audit-logged, and only authorized users with the appropriate permissions can view sensitive information.",
+      "All safeguarding and welfare information is protected by granular, role‑based access controls. Every view, update, and export is fully audit‑logged. Only authorised staff with the correct permissions can access sensitive data, ensuring compliance with club, academy, and FAW safeguarding standards.",
   },
   {
     question: "Can parents access the platform?",
     answer:
-      "Yes, a dedicated parent portal is included in Pro and Enterprise plans. Parents can view fixture information, confirm attendance, and communicate with academy staff through safeguarding-audited messaging.",
+      "Yes. A dedicated parent portal is included in Pro and Enterprise plans. Parents can view fixtures, confirm availability, receive updates, and communicate with staff through safeguarding‑audited messaging — without exposing internal academy data.",
   },
   {
-    question: "Is there a Welsh language option?",
+    question: "Is the platform available in Welsh?",
     answer:
-      "Yes, full Welsh/English bilingual support is built into the platform from the ground up, with language switching available throughout the interface.",
+      "Yes. StatTarian includes full Welsh/English bilingual support throughout the entire interface. Users can switch languages at any time, and all core modules operate seamlessly in both languages.",
   },
   {
     question: "How long does onboarding take?",
     answer:
-      "Typically 2–4 weeks with dedicated support. We configure your organisation structure, import existing data, set up user roles, and provide training to ensure a smooth transition.",
+      "Most clubs and academies are fully onboarded within 2–4 weeks. Our team configures your organisational structure, imports existing data, sets up user roles and permissions, and provides hands‑on training to ensure a smooth transition for coaches, analysts, and administrators.",
   },
   {
-    question: "Can we migrate from Pitchero / Hudl?",
+    question: "Can you migrate our data from other platforms (Pitchero, Hudl, spreadsheets)?",
     answer:
-      "Yes, data migration support is available on Pro and Enterprise plans. Our team will work with you to map and import your existing data from current platforms.",
+      "Yes. Data migration support is included in Pro and Enterprise plans. We work with you to map, clean, and import your existing data — whether it comes from Pitchero, Hudl, spreadsheets, or other systems — so you can start with a complete and accurate history.",
+  },
+  {
+    question: "What devices do coaches and parents need to use StatTarian?",
+    answer:
+      "StatTarian works on any modern device — mobile, tablet, or desktop. Coaches can manage sessions and squads on the pitch using their phone, while parents can access the portal from any browser without needing to install an app.",
+  },
+  {
+    question: "Do coaches need training to use StatTarian?",
+    answer:
+      "StatTarian is designed to be intuitive from day one. Most coaches are fully comfortable within a single session. For larger academies, we provide structured onboarding, role‑specific training, and ongoing support to ensure consistent adoption.",
+  },
+  {
+    question: "How does StatTarian support player development?",
+    answer:
+      "The platform centralises player information, attendance, session data, and development insights in one place. Coaches can track progress over time, identify trends, and share structured feedback with players and parents — all within safeguarding‑audited workflows.",
+  },
+  {
+    question: "What makes StatTarian different from other platforms?",
+    answer:
+      "StatTarian is built specifically for academies and pathway environments. It combines safeguarding‑first communication, player development intelligence, bilingual support, and COMET integration in a single, modern platform — reducing admin while strengthening the player journey.",
   },
 ];
 
@@ -86,6 +107,8 @@ export function Pricing() {
           </AnimatedSection>
         </div>
       </section>
+
+      <RolesMarqueeBar />
 
       {/* Pricing Table */}
       <section className="py-12 bg-background">

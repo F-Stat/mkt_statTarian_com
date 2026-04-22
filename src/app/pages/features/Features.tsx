@@ -32,7 +32,7 @@ export function Features() {
                 className="text-base md:text-xl text-muted-foreground"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Eight purpose-built modules. One unified platform.
+                Purpose-built modules. One unified platform.
               </p>
             </div>
           </AnimatedSection>

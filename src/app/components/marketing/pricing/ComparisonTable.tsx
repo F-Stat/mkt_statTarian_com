@@ -91,6 +91,7 @@ function Cell({ value }: { value: CellValue }) {
 export function ComparisonTable() {
   return (
     <div className="max-w-5xl mx-auto">
+
       {/* Scroll hint — visible on mobile only */}
       <p className="text-xs text-muted-foreground text-center mb-3 md:hidden">
         Scroll to compare all plans →
@@ -120,16 +121,30 @@ export function ComparisonTable() {
           <tbody>
             {featureGroups.map((group) => (
               <>
+
+                {/* CATEGORY PILL ROW */}
                 <tr key={group.category} className="border-t border-border">
                   <td
                     colSpan={5}
-                    className="pt-8 pb-3 text-xs uppercase tracking-widest font-semibold text-muted-foreground sticky left-0 bg-card"
-                    style={{ fontFamily: "var(--font-heading)" }}
+                    className="pt-8 pb-4 sticky left-0 bg-card"
                   >
-                    {group.category}
+                    <span
+                      className="
+                        inline-block px-3 py-1 
+                        rounded-full 
+                        text-[10px] md:text-xs 
+                        uppercase tracking-[0.2em] font-semibold 
+                        text-white 
+                        bg-[var(--color-brand-700)]
+                      "
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {group.category}
+                    </span>
                   </td>
                 </tr>
 
+                {/* FEATURE ROWS */}
                 {group.features.map((feature, i) => (
                   <tr
                     key={feature.name}
@@ -148,6 +163,7 @@ export function ComparisonTable() {
                     ))}
                   </tr>
                 ))}
+
               </>
             ))}
           </tbody>
