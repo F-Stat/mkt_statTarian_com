@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import { RoleFilterBar } from '../../components/marketing/features/RoleFilterBar'
-import { ModuleGrid } from '../../components/marketing/features/ModuleGrid'
+import { ModuleShowcase } from '../../components/marketing/features/ModuleShowcase'
 import { DemoCtaSection } from '../../components/marketing/cta/DemoCtaSection'
 import { AnimatedSection } from '../../components/marketing/AnimatedSection'
 
 export function Features() {
-  const [selectedRole, setSelectedRole] = useState('all')
-
   return (
     <main className="pt-24">
+
       {/* Page Hero */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -42,17 +39,10 @@ export function Features() {
         </div>
       </section>
 
-      {/* Role Filter Bar */}
-      <section className="py-4 md:py-8 bg-card border-y border-border sticky top-[57px] md:top-[73px] z-40">
-        <div className="container mx-auto px-4">
-          <RoleFilterBar onFilterChange={setSelectedRole} />
-        </div>
-      </section>
-
-      {/* Module Grid */}
+      {/* Module Showcases */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <ModuleGrid selectedRole={selectedRole} />
+          <ModuleShowcase />
         </div>
       </section>
 

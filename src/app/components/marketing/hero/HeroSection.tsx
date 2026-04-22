@@ -35,7 +35,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.85)_70%)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative container mx-auto px-4 pt-8 pb-32 flex flex-col items-center text-center gap-4 md:gap-6">
+        <div className="relative container mx-auto px-4 pt-24 pb-16 flex flex-col items-center text-center gap-1 md:gap-6">
 
           {/* Logo Mark + Brand Name + Tagline */}
           <motion.div
