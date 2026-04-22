@@ -246,27 +246,6 @@ export function Promise() {
         </div>
       </section>
 
-      {/* Closing */}
-      <section className="py-12 md:py-24 bg-card border-t border-border">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <AnimatedSection>
-            <div className="space-y-4 md:space-y-6">
-              <h2
-                className="text-3xl md:text-5xl font-bold"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                A final word.
-              </h2>
-              <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
-                Football deserves better tools. Coaches deserve more time. Parents deserve clarity.  
-                And players deserve safe, organised environments where they can grow.  
-                That’s the promise behind StatTarian — and it’s one we intend to keep.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       <DemoCtaSection
         heading="Ready to hold us to it?"
         subheading="Book a demo and see the promise in action."

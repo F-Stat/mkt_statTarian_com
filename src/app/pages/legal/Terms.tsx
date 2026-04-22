@@ -1,10 +1,10 @@
 export function Terms() {
   return (
-    <main className="pt-24 pb-24 bg-neutral-50 text-neutral-900 min-h-screen">
+    <main className="pt-24 pb-24 bg-[var(--background)] text-neutral-100 min-h-screen">
       <div className="container mx-auto px-4 max-w-4xl">
         <article className="mx-auto space-y-6">
           <h1 style={{ fontFamily: 'var(--font-display)' }}>Terms of Service</h1>
-          <p className="text-neutral-500">Last updated: April 2026</p>
+          <p className="text-neutral-400">Last updated: April 2026</p>
 
           <h2>1. Acceptance of Terms</h2>
           <p>
