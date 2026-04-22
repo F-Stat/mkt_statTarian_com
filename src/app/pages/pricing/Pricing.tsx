@@ -73,7 +73,8 @@ export function Pricing() {
   const [recommendedTier] = useState<TierKey>("pro");
 
   return (
-    <main className="pt-24">
+    <main className="pt-16 md:pt-24">
+
       {/* Hero */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">

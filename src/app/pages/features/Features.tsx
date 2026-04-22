@@ -4,7 +4,7 @@ import { AnimatedSection } from '../../components/marketing/AnimatedSection'
 
 export function Features() {
   return (
-    <main className="pt-24">
+    <main className="pt-16 md:pt-24">
 
       {/* Page Hero */}
       <section className="py-12 md:py-24 bg-background">

@@ -1,61 +1,76 @@
-import { ShieldCheck, Globe, Lock } from 'lucide-react'
-import { DemoCtaSection } from '../../components/marketing/cta/DemoCtaSection'
-import { AnimatedSection } from '../../components/marketing/AnimatedSection'
-import { motion } from 'motion/react'
-import walesImage from '../../../assets/abstract-training.jpg'
+import { ShieldCheck, Globe, Lock } from "lucide-react";
+import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
+import { AnimatedSection } from "../../components/marketing/AnimatedSection";
+import { motion } from "motion/react";
+import walesImage from "../../../assets/abstract-training.jpg";
 
 const pillClass =
-  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
+  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
 const values = [
   {
     icon: ShieldCheck,
-    title: 'Player First',
+    title: "Player First",
     description:
-      'Every product decision starts with one question: does this help a young player develop safely and reach their potential?',
+      "Every decision starts with one question: does this protect and support the young people in our care? If not, it doesn’t ship.",
   },
   {
     icon: Globe,
-    title: 'Welsh at Heart',
+    title: "Welsh at Heart",
     description:
-      'Bilingual Welsh/English from day one. FAW-compliant by design. Built by someone who cares about Welsh football — not just as a market.',
+      "Built in Wales, for Wales. Bilingual from day one, aligned with FAW requirements, and shaped by people who understand the pathway.",
   },
   {
     icon: Lock,
-    title: 'Trust by Design',
+    title: "Trust by Design",
     description:
-      "Safeguarding controls, role-based access, and encrypted audit trails aren't features we added later. They're the foundation everything else is built on.",
+      "Safeguarding‑centric workflows, role‑based access, and encrypted audit trails form the foundation of the entire platform.",
   },
-]
+];
 
 const problems = [
   {
-    before: 'Spreadsheets and email threads for player welfare records',
-    after: 'Structured digital records with audit trails and role-based access',
+    before:
+      "Disconnected spreadsheets and email chains for welfare and injuries",
+    after:
+      "A single safeguarding‑first record system with audit trails and role‑based access",
   },
   {
-    before: 'Manual FAW COMET data entry, duplicated across multiple tools',
-    after: 'Direct FAW COMET integration — register once, sync everywhere',
+    before: "Manual FAW COMET entries duplicated across multiple tools",
+    after:
+      "Direct COMET integration — update once, sync everywhere automatically",
   },
   {
-    before: 'Video analysis on consumer platforms with no safeguarding controls',
-    after: 'Purpose-built video tools with age-appropriate access controls',
+    before: "Video analysis on consumer apps with no safeguarding controls",
+    after:
+      "Purpose‑built video tools with age‑appropriate access and full accountability",
   },
-]
+  {
+    before: "Information scattered across chats, PDFs, and personal devices",
+    after:
+      "One connected platform where every update is structured, secure, and visible",
+  },
+  {
+    before: "Coaches spending hours on admin instead of player development",
+    after:
+      "Automated workflows that give time back to the people who need it most",
+  },
+];
 
 // TODO: Replace with real assets when available
-const HERO_IMAGE = ''         // Aerial or wide-angle pitch shot — matches DemoCtaSection tone
-const FOUNDER_IMAGE = ''      // Headshot of Steve Lloyd
-const WALES_IMAGE = walesImage
+const HERO_IMAGE = ""; // Aerial or wide-angle pitch shot — matches DemoCtaSection tone
+const FOUNDER_IMAGE = ""; // Headshot of Steve Lloyd
+const WALES_IMAGE = walesImage;
 
 export function About() {
   return (
-    <main className="pt-24">
-
+    <main className="pt-4 md:pt-24">
       {/* Hero — full-bleed background image with overlay */}
       <section
         className="relative py-32 md:py-48 bg-background bg-cover bg-center"
-        style={{ backgroundImage: HERO_IMAGE ? `url(${HERO_IMAGE})` : undefined }}
+        style={{
+          backgroundImage: HERO_IMAGE ? `url(${HERO_IMAGE})` : undefined,
+        }}
       >
         {HERO_IMAGE && <div className="absolute inset-0 bg-background/80" />}
 
@@ -65,20 +80,23 @@ export function About() {
               <div>
                 <span
                   className={pillClass}
-                  style={{ fontFamily: 'var(--font-heading)', backgroundColor: 'var(--color-brand-700)' }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
                 >
                   About StatTarian
                 </span>
               </div>
               <h1
                 className="text-5xl md:text-6xl lg:text-7xl font-bold"
-                style={{ fontFamily: 'var(--font-display)' }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                Built for Welsh football. By someone who understands it.
+                Built Inside Academy Football.
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                A unified platform for FAW academies — player development, welfare, and
-                performance, all in one place. No patchwork. No compromises.
+                statTarian was created by practitioners who understand the
+                demands of youth development.
               </p>
             </div>
           </AnimatedSection>
@@ -94,13 +112,15 @@ export function About() {
                 <div>
                   <span
                     className={pillClass}
-                    style={{ fontFamily: 'var(--font-heading)', backgroundColor: 'var(--color-brand-700)' }}
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      backgroundColor: "var(--color-brand-700)",
+                    }}
                   >
                     From the Founder
                   </span>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-start">
-
                   <div className="h-20 w-20 rounded-full bg-muted overflow-hidden shrink-0 flex items-center justify-center text-2xl font-bold">
                     {FOUNDER_IMAGE ? (
                       <img
@@ -108,39 +128,50 @@ export function About() {
                         alt="Steve Lloyd, Founder & CEO of StatTarian"
                         className="h-full w-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none'
+                          e.currentTarget.style.display = "none";
                         }}
                       />
                     ) : (
-                      'SL'
+                      "SL"
                     )}
                   </div>
 
                   <div className="space-y-5">
                     <h2
                       className="text-3xl md:text-4xl font-bold leading-tight"
-                      style={{ fontFamily: 'var(--font-display)' }}
+                      style={{ fontFamily: "var(--font-display)" }}
                     >
-                      "Welsh academies deserved better than a dozen disconnected tools."
+                      "Welsh academies deserved better than a dozen disconnected
+                      tools."
                     </h2>
+
                     <p className="text-lg text-muted-foreground">
-                      I've seen first-hand how Welsh football academies operate — the
-                      commitment, the passion, the genuine care coaches have for the young
-                      players in their charge. But I've also seen the admin burden:
-                      registration on one system, schedules on another, welfare records
-                      buried in email threads.
+                      I’ve spent years inside Welsh academies — seeing the
+                      commitment of coaches, the care for young players, and the
+                      sheer effort required just to keep everything running. But
+                      I also saw the strain: registrations in one place,
+                      schedules somewhere else, welfare notes buried in inboxes,
+                      and no single source of truth.
                     </p>
+
                     <p className="text-lg text-muted-foreground">
-                      I built StatTarian because an academy managing 50 players shouldn't
-                      need enterprise-level IT skills to run safely and compliantly. Every
-                      part of this platform — from FAW COMET integration to Welsh-language
-                      support — was designed with that reality in mind.
+                      StatTarian exists because an academy shouldn’t need
+                      enterprise‑level IT skills to operate safely, clearly, and
+                      compliantly. From FAW COMET integration to bilingual
+                      support, every part of this platform was designed around
+                      the real day‑to‑day reality of Welsh football.
                     </p>
+
                     <div className="pt-2">
-                      <p className="font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
+                      <p
+                        className="font-semibold"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
                         Steve Lloyd
                       </p>
-                      <p className="text-sm text-muted-foreground">Founder & CEO, StatTarian</p>
+                      <p className="text-sm text-muted-foreground">
+                        Founder & CEO, StatTarian
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -156,43 +187,38 @@ export function About() {
           <div className="max-w-6xl mx-auto">
             <AnimatedSection>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
                 <div className="space-y-6">
                   <div>
                     <span
                       className={pillClass}
-                      style={{ fontFamily: 'var(--font-heading)', backgroundColor: 'var(--color-brand-700)' }}
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        backgroundColor: "var(--color-brand-700)",
+                      }}
                     >
                       Why Wales
                     </span>
                   </div>
                   <h2
                     className="text-4xl font-bold"
-                    style={{ fontFamily: 'var(--font-display)' }}
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
-                    Not a generic platform with a Welsh flag on it.
+                    Built for Wales — not adapted for it.
                   </h2>
+
                   <p className="text-lg text-muted-foreground">
-                    StatTarian was designed from scratch for the FAW ecosystem. That means
-                    native bilingual Welsh/English support throughout, FAW safeguarding and
-                    COMET compliance baked in — not bolted on — and a genuine understanding
-                    of how Welsh community academies actually work.
+                    StatTarian was designed from the ground up for the FAW
+                    pathway. That means bilingual Welsh/English support
+                    throughout, safeguarding and COMET compliance built into
+                    every workflow, and a deep understanding of how Welsh
+                    academies actually operate.
                   </p>
+
                   <p className="text-lg text-muted-foreground">
-                    We're not adapting a platform built for the Premier League. We're
-                    building for the grassroots clubs and regional academies that are the
-                    backbone of Welsh football.
+                    This isn’t a Premier League tool retrofitted for Wales. It’s
+                    a Welsh platform built for grassroots clubs and regional
+                    academies — the backbone of Welsh football.
                   </p>
-                  <div className="flex flex-wrap gap-3 pt-2">
-                    {['Bilingual Welsh/English', 'FAW COMET integration', 'FAW safeguarding compliance', 'Built in Wales'].map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-sm px-4 py-1.5 rounded-full border border-border text-muted-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
                 <motion.div
@@ -208,7 +234,6 @@ export function About() {
                     className="h-full w-full object-cover"
                   />
                 </motion.div>
-
               </div>
             </AnimatedSection>
           </div>
@@ -223,19 +248,24 @@ export function About() {
               <div>
                 <span
                   className={pillClass}
-                  style={{ fontFamily: 'var(--font-heading)', backgroundColor: 'var(--color-brand-700)' }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
                 >
                   What We Replaced
                 </span>
               </div>
               <h2
                 className="text-4xl md:text-5xl font-bold"
-                style={{ fontFamily: 'var(--font-display)' }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                What we replaced
+                From chaos to clarity.
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                The status quo for most Welsh academies. StatTarian replaces all of it.
+                Before StatTarian, Welsh academies were forced to stitch
+                together disconnected tools. We replaced all of it with a
+                single, safeguarding‑first operating system.
               </p>
             </div>
           </AnimatedSection>
@@ -272,14 +302,17 @@ export function About() {
               <div>
                 <span
                   className={pillClass}
-                  style={{ fontFamily: 'var(--font-heading)', backgroundColor: 'var(--color-brand-700)' }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
+                  }}
                 >
                   Our Values
                 </span>
               </div>
               <h2
                 className="text-4xl md:text-5xl font-bold"
-                style={{ fontFamily: 'var(--font-display)' }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Our Values
               </h2>
@@ -301,7 +334,7 @@ export function About() {
                 </div>
                 <h3
                   className="text-2xl font-bold"
-                  style={{ fontFamily: 'var(--font-heading)' }}
+                  style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {value.title}
                 </h3>
@@ -314,5 +347,5 @@ export function About() {
 
       <DemoCtaSection />
     </main>
-  )
+  );
 }
