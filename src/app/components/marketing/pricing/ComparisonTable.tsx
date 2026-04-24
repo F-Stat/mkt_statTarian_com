@@ -25,38 +25,90 @@ const featureGroups: FeatureGroup[] = [
       { name: "Welsh/English bilingual support", values: [true, true, true, true] },
       { name: "Squad & age group management", values: [false, true, true, true] },
       { name: "Fixture management & match reports", values: [false, true, true, true] },
+      { name: "Staff profiles, roles & permissions", values: [false, true, true, true] },
+      { name: "Season planning & academy calendar", values: [false, true, true, true] },
+      { name: "Facility booking & resource management", values: [false, true, true, true] },
       { name: "Trial & recruitment pipeline", values: [false, false, true, true] },
+      { name: "Player pathway tracking", values: [false, false, true, true] },
       { name: "Multi-academy / regional hub support", values: [false, false, false, true] },
     ],
   },
+
+  {
+    category: "Match Centre",
+    features: [
+      { name: "Team selection & lineup builder", values: [false, true, true, true] },
+      { name: "Pre-match preparation & notes", values: [false, true, true, true] },
+      { name: "Opposition scouting (match)", values: [false, true, true, true] },
+      { name: "Live match stats & event input", values: [false, true, true, true] },
+      { name: "Post-match reports", values: [false, true, true, true] },
+      { name: "Player match ratings", values: [false, true, true, true] },
+      { name: "Results, standings & cup progress", values: [false, true, true, true] },
+      { name: "Travel & logistics coordination", values: [false, true, true, true] },
+      { name: "Match video upload & clip tagging", values: [false, false, true, true] },
+    ],
+  },
+
   {
     category: "Welfare & Safeguarding",
     features: [
       { name: "Basic safeguarding & welfare records", values: [true, true, true, true] },
-      { name: "Injury register & return-to-play tracking", values: [false, true, true, true] },
+      { name: "Concern reporting", values: [true, true, true, true] },
+      { name: "Medical records & history", values: [false, true, true, true] },
+      { name: "Injury register", values: [false, true, true, true] },
+      { name: "Fit-to-play / availability flags", values: [false, true, true, true] },
+      { name: "Medication management", values: [false, false, true, true] },
+      { name: "Return-to-play protocols", values: [false, false, true, true] },
       { name: "Wellbeing check-ins", values: [false, false, true, true] },
       { name: "Safeguarding case management", values: [false, false, false, true] },
-      { name: "Full audit log & compliance documents", values: [false, false, false, true] },
+      { name: "Full welfare audit trail", values: [false, false, false, true] },
+      { name: "GDPR data retention & compliance", values: [false, false, false, true] },
       { name: "FAW licence compliance dashboard", values: [false, false, false, true] },
     ],
   },
+
   {
-    category: "Performance & Analysis",
+    category: "Education & Player Support",
     features: [
-      { name: "Performance assessments & IDPs", values: [false, true, true, true] },
-      { name: "Video library & media gallery", values: [false, false, true, true] },
-      { name: "Custom report builder", values: [false, false, true, true] },
-      { name: "Advanced reporting & analytics", values: [false, false, true, true] },
+      { name: "Education workshop log", values: [false, false, true, true] },
+      { name: "Workshop attendance tracking", values: [false, false, true, true] },
+      { name: "School contacts per player", values: [false, false, true, true] },
+      { name: "School liaison log", values: [false, false, true, true] },
+      { name: "Follow-up reminders for liaison actions", values: [false, false, false, true] },
+      { name: "Coach development workshop tracking", values: [false, false, false, true] },
     ],
   },
+
+  {
+    category: "Development & Analysis",
+    features: [
+      { name: "Individual Development Plans (IDPs)", values: [false, false, true, true] },
+      { name: "Technical & tactical assessments", values: [false, false, true, true] },
+      { name: "Physical benchmarks & LTAD", values: [false, false, true, true] },
+      { name: "Training load & recovery monitoring", values: [false, false, true, true] },
+      { name: "Video library & tagging tools", values: [false, false, true, true] },
+      { name: "Player highlight reel builder", values: [false, false, true, true] },
+      { name: "Performance benchmarking", values: [false, false, true, true] },
+      { name: "Progression charts & trends", values: [false, false, true, true] },
+      { name: "Peer & national benchmark comparison", values: [false, false, true, true] },
+      { name: "Coach feedback & session ratings", values: [false, false, true, true] },
+      { name: "Advanced reporting & analytics", values: [false, false, true, true] },
+      { name: "Custom report builder", values: [false, false, true, true] },
+    ],
+  },
+
   {
     category: "Communication",
     features: [
-      { name: "Staff communication tools", values: [true, true, true, true] },
+      { name: "Staff communication tools", values: [false, true, true, true] },
       { name: "Parent portal & communication", values: [false, true, true, true] },
       { name: "Announcement board & notice board", values: [false, true, true, true] },
+      { name: "Automated reminders", values: [false, true, true, true] },
+      { name: "In-app notification management", values: [false, true, true, true] },
+      { name: "Communication audit log", values: [false, false, false, true] },
     ],
   },
+
   {
     category: "Support & Onboarding",
     features: [
@@ -67,6 +119,7 @@ const featureGroups: FeatureGroup[] = [
     ],
   },
 ]
+
 
 function Cell({ value }: { value: CellValue }) {
   if (value === true) {

@@ -1,87 +1,79 @@
 import { PricingCard } from "./PricingCard"
-import { motion } from "motion/react"
 
 type TierKey = "core" | "performance" | "advanced" | "elite"
 
 const tiers = [
   {
     name: "Core",
-    target: "Foundations for smaller academies",
-    price: "£129/month",
+    persona: "Grassroots academies and small clubs",
+    price: "£99/month",
     features: [
-      "Player registration & profiles",
-      "Session scheduling & attendance",
-      "FAW COMET integration",
-      "Basic safeguarding & welfare records",
+      "Player profiles & attendance",
+      "Training & session scheduling",
+      "FAW COMET sync",
+      "Basic safeguarding & welfare",
       "Welsh/English bilingual support",
     ],
     tier: "core" as TierKey,
   },
   {
     name: "Performance",
-    target: "Scaling across age groups",
+    persona: "Academies running multiple squads",
     price: "£299/month",
     features: [
       "All Core features",
-      "Squad & age group management",
-      "Parent portal & communication",
-      "Fixture management & match reports",
-      "Performance assessments & IDPs",
-      "Injury register & return-to-play tracking",
+      "Squads, phases & fixtures",
+      "Staff & parent communication",
+      "Injury tracking & availability",
+      "Recruitment & trial management",
     ],
     tier: "performance" as TierKey,
   },
   {
     name: "Advanced",
-    target: "Established full-scale academies",
-    price: "£499/month",
+    persona: "Academies with structured development",
+    price: "£599/month",
     features: [
       "All Performance features",
-      "Video library & media gallery",
-      "Advanced reporting & analytics",
-      "Trial & recruitment pipeline",
-      "Wellbeing check-ins",
-      "Custom report builder",
+      "IDPs, assessments & benchmarks",
+      "LTAD & training load monitoring",
+      "Video analysis & media tools",
+      "Wellbeing & return‑to‑play workflows",
+      "Education & player support tools",
+      "Advanced analytics & custom reports",
     ],
     tier: "advanced" as TierKey,
   },
   {
     name: "Elite",
-    target: "Regional hubs & governing bodies",
+    persona: "Pro academies, regional hubs & governing bodies",
     price: "Contact us",
     features: [
       "All Advanced features",
-      "FAW licence compliance dashboard",
-      "Multi-academy / regional hub support",
       "Safeguarding case management",
-      "Full audit log & compliance documents",
-      "Dedicated onboarding & priority support",
+      "Full audit logs & compliance tools",
+      "FAW licence dashboard",
+      "Multi‑academy / regional hub support",
+      "Coach development & education oversight",
     ],
     tier: "elite" as TierKey,
   },
 ]
 
-interface PricingTableProps {
-  recommendedTier?: TierKey
-}
-
-export function PricingTable({ recommendedTier = "performance" }: PricingTableProps) {
+export function PricingTable({ recommendedTier }: { recommendedTier: TierKey }) {
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-        {tiers.map((tier, index) => (
-          <motion.div
-            key={tier.tier}
-            className="flex"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <PricingCard {...tier} recommended={recommendedTier === tier.tier} />
-          </motion.div>
-        ))}
-      </div>
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {tiers.map((tier) => (
+        <PricingCard
+          key={tier.name}
+          name={tier.name}
+          persona={tier.persona}
+          price={tier.price}
+          features={tier.features}
+          tier={tier.tier}
+          recommended={tier.tier === recommendedTier}
+        />
+      ))}
     </div>
   )
 }

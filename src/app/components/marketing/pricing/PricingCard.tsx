@@ -1,35 +1,35 @@
-import { Link } from 'react-router'
-import { Check } from 'lucide-react'
-import { Button } from '../../ui/button'
-import { Badge } from '../../ui/badge'
-import { cn } from '@/lib/utils'
+import { Link } from "react-router"
+import { Check } from "lucide-react"
+import { Button } from "../../ui/button"
+import { Badge } from "../../ui/badge"
+import { cn } from "@/lib/utils"
 
 interface PricingCardProps {
   name: string
-  target: string
+  persona: string
   price: string
   features: string[]
-  tier: 'core' | 'performance' | 'advanced' | 'elite'
+  tier: "core" | "performance" | "advanced" | "elite"
   recommended?: boolean
 }
 
 const tierGradients: Record<string, string> = {
-  core: "bg-gradient-to-b from-[#0A1A24] to-[#0F2A36]",
-  performance: "bg-gradient-to-b from-primary/20 to-primary/5",
-  advanced: "bg-gradient-to-b from-accent/20 to-accent/5",
-  elite: "bg-gradient-to-b from-[#1D546D]/30 to-[#061E29]/10",
+  core: "bg-gradient-to-b from-[#061E29] to-[#0F2A36]",
+  performance: "bg-gradient-to-b from-[#1D546D]/30 to-[#1D546D]/10",
+  advanced: "bg-gradient-to-b from-[#5F9598]/30 to-[#5F9598]/10",
+  elite: "bg-gradient-to-b from-[#1D546D]/40 to-[#061E29]/20",
 }
 
 export function PricingCard({
   name,
-  target,
+  persona,
   price,
   features,
   tier,
   recommended = false,
 }: PricingCardProps) {
   const isContactUs = price === "Contact us"
-  const [amount, cadence] = isContactUs ? [price, null] : price.split('/')
+  const [amount, cadence] = isContactUs ? [price, null] : price.split("/")
 
   return (
     <div
@@ -40,7 +40,7 @@ export function PricingCard({
       )}
     >
       {recommended && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground whitespace-nowrap">
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-primary shadow-md whitespace-nowrap">
           Recommended
         </Badge>
       )}
@@ -53,11 +53,12 @@ export function PricingCard({
         >
           {name}
         </h3>
-        <p className="text-sm text-muted-foreground">{target}</p>
+
+        <p className="text-sm text-muted-foreground">{persona}</p>
       </div>
 
       {/* Price */}
-      <div className="mb-6 min-h-[72px]">
+      <div className="mt-4 mb-6 min-h-[72px]">
         {isContactUs ? (
           <>
             <p
@@ -91,18 +92,18 @@ export function PricingCard({
       </div>
 
       {/* Features */}
-      <ul className="space-y-3 mb-8 flex-1">
+      <ul className="space-y-3 mb-8 flex-1 text-sm leading-relaxed">
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-3">
             <Check className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-sm">{feature}</span>
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
 
       {/* CTA */}
       <Button asChild className="w-full">
-        <Link to={isContactUs ? "/contact?plan=elite" : `/contact?plan=${tier}`}>
+        <Link to={`/contact?plan=${tier}`}>
           {isContactUs ? "Contact Us" : "Get Started"}
         </Link>
       </Button>
