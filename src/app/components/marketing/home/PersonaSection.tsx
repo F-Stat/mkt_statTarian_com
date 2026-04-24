@@ -58,7 +58,7 @@ const platforms = [
     icon: ShieldCheck,
     title: "Safeguarding & Welfare",
     description:
-      "A dedicated case management module completely isolated from Club Admin. Private logs, DBS status tracking, and escalation workflows — built for the seriousness the role demands.",
+      "A dedicated case management module completely isolated from club admin. Private logs, DBS status tracking, and escalation workflows — built for the seriousness the role demands.",
   },
   {
     icon: BookOpen,

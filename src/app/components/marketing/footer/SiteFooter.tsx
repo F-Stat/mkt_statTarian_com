@@ -19,10 +19,10 @@ export function SiteFooter() {
               statTarian
             </h3>
             <p className="text-xs text-primary font-medium mb-2">
-              Football Organised
+              Football. Organised.
             </p>
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-[240px]">
-              Purpose‑built academy management software for football clubs.
+              Purpose‑built academy management software for Welsh football academies.
             </p>
           </div>
 

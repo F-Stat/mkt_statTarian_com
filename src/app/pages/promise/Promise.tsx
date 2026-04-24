@@ -86,7 +86,7 @@ export function Promise() {
                 className="text-base md:text-xl text-muted-foreground"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                StatTarian is more than software — it’s a commitment to clarity, safety, and the standards academy football deserves.
+                statTarian is more than software — it’s a commitment to clarity, safety, and the standards academy football deserves.
               </p>
             </div>
           </AnimatedSection>
@@ -116,7 +116,7 @@ export function Promise() {
                   className="text-3xl md:text-5xl font-bold"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  StatTarian exists to bring order, clarity, and accountability to academy football.
+                  statTarian exists to bring order, clarity, and accountability to academy football.
                 </h2>
                 <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
@@ -158,7 +158,7 @@ export function Promise() {
                     className="text-xs text-white/50 uppercase tracking-widest"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
-                    StatTarian — Platform Overview
+                    statTarian — Platform Overview
                   </p>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export function Promise() {
                 className="text-3xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Five commitments you can rely on. Every day.
+                Five commitments you can always rely on. 
               </h2>
             </div>
           </AnimatedSection>

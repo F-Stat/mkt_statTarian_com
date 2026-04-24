@@ -93,7 +93,7 @@ export function HeroSection() {
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
               }}
             >
-              statTarian is a football academy management platform built for
+              statTarian is a Welsh football academy management platform built for
               youth development programmes — replacing the fragmented tools
               holding your operations together with one connected system. Give
               coaches their time back, keep parents effortlessly informed, and
@@ -108,7 +108,7 @@ export function HeroSection() {
             transition={{ delay: 1, duration: 0.6 }}
           >
             <Button size="lg" className="px-8 py-5 text-lg md:px-12 md:py-6 md:text-xl" asChild>
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">Book a Demo</Link>
             </Button>
           </motion.div>
 

@@ -13,7 +13,7 @@ interface DemoCtaSectionProps {
 export function DemoCtaSection({
   heading = "Ready to see it in action?",
   subheading = "Book a 30-minute demo tailored to your academy's needs.",
-  ctaLabel = "Contact Us",
+  ctaLabel = "Book a Demo",
   ctaHref = "/contact",
 }: DemoCtaSectionProps) {
   return (
@@ -38,7 +38,7 @@ export function DemoCtaSection({
                   backgroundColor: "var(--color-brand-700)",
                 }}
               >
-                Book a Demo
+                Book a personalised walkthrough
               </span>
             </div>
             <h2

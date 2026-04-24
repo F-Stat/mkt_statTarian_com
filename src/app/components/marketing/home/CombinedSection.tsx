@@ -49,7 +49,7 @@ export function CombinedSection() {
                 backgroundColor: 'var(--color-brand-700)',
               }}
             >
-              Simplified Onboarding
+              How it works
             </span>
           </div>
         </AnimatedSection>
@@ -59,7 +59,7 @@ export function CombinedSection() {
             className="text-3xl md:text-5xl font-bold text-center mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Built for Day One.
+            Up and running in days, not months.
           </h3>
         </AnimatedSection>
 
@@ -124,7 +124,7 @@ export function CombinedSection() {
                 backgroundColor: 'var(--color-brand-700)',
               }}
             >
-              Personalisation
+              Book a personalised walkthrough
             </span>
           </div>
         </AnimatedSection>
@@ -149,7 +149,7 @@ export function CombinedSection() {
                 className="px-8 py-5 text-lg md:px-12 md:py-6 md:text-xl"
                 asChild
               >
-                <Link to="/contact">Request a Demo</Link>
+                <Link to="/contact">Book a Demo</Link>
               </Button>
             </div>
           </div>
