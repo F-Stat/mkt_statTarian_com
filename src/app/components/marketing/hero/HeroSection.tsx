@@ -36,7 +36,6 @@ export function HeroSection() {
 
         {/* Content */}
         <div className="relative container mx-auto px-4 pt-24 pb-16 flex flex-col items-center text-center gap-1 md:gap-6">
-
           {/* Logo Mark + Brand Name + Tagline */}
           <motion.div
             className="flex flex-col items-center gap-0"
@@ -56,7 +55,7 @@ export function HeroSection() {
               statTarian
             </p>
             <p
-              className="text-foreground/70 text-sm md:text-base tracking-wide"
+              className="text-primary text-sm md:text-base tracking-wide font-medium"
               style={{ fontFamily: "var(--font-body)" }}
             >
               Football. Organised.
@@ -93,8 +92,8 @@ export function HeroSection() {
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
               }}
             >
-              statTarian is a Welsh football academy management platform built for
-              youth development programmes — replacing the fragmented tools
+              statTarian is a Welsh football academy management platform built
+              for youth development programmes — replacing the fragmented tools
               holding your operations together with one connected system. Give
               coaches their time back, keep parents effortlessly informed, and
               ensure safeguarding and compliance never slip through the cracks.
@@ -107,11 +106,14 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            <Button size="lg" className="px-8 py-5 text-lg md:px-12 md:py-6 md:text-xl" asChild>
+            <Button
+              size="lg"
+              className="px-8 py-5 text-lg md:px-12 md:py-6 md:text-xl"
+              asChild
+            >
               <Link to="/contact">Book a Demo</Link>
             </Button>
           </motion.div>
-
         </div>
       </motion.div>
     </>

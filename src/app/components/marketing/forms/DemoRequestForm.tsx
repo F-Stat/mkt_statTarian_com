@@ -200,10 +200,10 @@ export function DemoRequestForm() {
             <SelectValue placeholder="Select a plan" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="starter">Academy Starter</SelectItem>
-            <SelectItem value="pro">Academy Pro</SelectItem>
-            <SelectItem value="enterprise">Multi-Academy/Enterprise</SelectItem>
-            <SelectItem value="unsure">Not sure</SelectItem>
+            <SelectItem value="starter">Core</SelectItem>
+            <SelectItem value="pro">Performance</SelectItem>
+            <SelectItem value="enterprise">Advanced</SelectItem>
+            <SelectItem value="unsure">Elite</SelectItem>
           </SelectContent>
         </Select>
       </div>
