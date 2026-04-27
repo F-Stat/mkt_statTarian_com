@@ -30,29 +30,10 @@ const categories = [
 
 export function RoleCategories() {
   return (
-    <section className="pt-16 md:pt-24 pb-24 bg-background">
+    <section className="pt-16 md:pt-8 pb-24 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedSection>
-          {/* Header */}
-          <div className="max-w-5xl mx-auto text-center space-y-4 mb-14">
-            <span
-              className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
-              style={{
-                fontFamily: "var(--font-heading)",
-                backgroundColor: "var(--color-brand-700)",
-              }}
-            >
-              Who We Support
-            </span>
-
-            <h2
-              className="text-3xl md:text-5xl font-black text-white leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Supporting every role across the academy pathway — end to end
-            </h2>
-          </div>
-
+          
           {/* Cards grid — rest unchanged */}
 
           {/* Cards grid */}

@@ -35,8 +35,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.85)_70%)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative container mx-auto px-4 pt-24 pb-16 flex flex-col items-center text-center gap-1 md:gap-6">
-          {/* Logo Mark + Brand Name + Tagline */}
+        <div className="relative container mx-auto px-4 pt-16 pb-16 md:pt-24 flex flex-col items-center text-center gap-1 md:gap-6">
+          {/* Logo Mark + Brand Name + Tagline — shifted up on mobile via reduced pt above */}
           <motion.div
             className="flex flex-col items-center gap-0"
             initial={{ opacity: 0, y: -20 }}
@@ -49,13 +49,13 @@ export function HeroSection() {
               className="h-20 md:h-40 w-auto mx-auto"
             />
             <p
-              className="text-foreground text-xl md:text-3xl font-bold tracking-wide"
+              className="text-foreground text-xl md:text-3xl font-bold tracking-wide leading-tight md:leading-normal"
               style={{ fontFamily: "var(--font-display)" }}
             >
               statTarian
             </p>
             <p
-              className="text-primary text-sm md:text-base tracking-wide font-medium"
+              className="text-primary text-sm md:text-base tracking-wide font-medium leading-tight md:leading-normal"
               style={{ fontFamily: "var(--font-body)" }}
             >
               Football. Organised.
@@ -64,7 +64,7 @@ export function HeroSection() {
 
           {/* Heading */}
           <motion.h1
-            className="font-black text-4xl md:text-6xl lg:text-7xl leading-tight max-w-4xl"
+            className="font-black text-4xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-tight max-w-4xl"
             style={{
               fontFamily: "var(--font-display)",
               textShadow: "0 2px 24px rgba(0,0,0,0.8)",
@@ -86,7 +86,7 @@ export function HeroSection() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             <p
-              className="text-base md:text-xl text-foreground/90 leading-relaxed max-w-3xl font-medium"
+              className="text-base md:text-xl text-foreground/90 leading-snug md:leading-relaxed max-w-3xl font-medium"
               style={{
                 fontFamily: "var(--font-body)",
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
@@ -102,6 +102,7 @@ export function HeroSection() {
 
           {/* CTA */}
           <motion.div
+            className="mt-4 md:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
