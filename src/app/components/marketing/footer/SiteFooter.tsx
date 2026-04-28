@@ -6,7 +6,7 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 pt-12 md:pt-20 pb-8 md:pb-12">
         <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-6 md:gap-8 mb-8 md:mb-10">
           {/* Column 1: Brand — full width + centred on mobile */}
@@ -29,7 +29,7 @@ export function SiteFooter() {
           {/* Column 2: Product — centred on mobile */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3
-              className="font-semibold mb-3 text-xs uppercase tracking-widest"
+              className="font-semibold mb-3 text-xs uppercase tracking-widest text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Product
@@ -57,7 +57,7 @@ export function SiteFooter() {
           {/* Column 3: Company — centred on mobile */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3
-              className="font-semibold mb-3 text-xs uppercase tracking-widest"
+              className="font-semibold mb-3 text-xs uppercase tracking-widest text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Company
@@ -85,7 +85,7 @@ export function SiteFooter() {
           {/* Column 4: Legal — centred on mobile */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3
-              className="font-semibold mb-3 text-xs uppercase tracking-widest"
+              className="font-semibold mb-3 text-xs uppercase tracking-widest text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Legal
@@ -121,7 +121,7 @@ export function SiteFooter() {
           {/* Column 5: Socials — centred on mobile */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3
-              className="font-semibold mb-3 text-xs uppercase tracking-widest"
+              className="font-semibold mb-3 text-xs uppercase tracking-widest text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Socials

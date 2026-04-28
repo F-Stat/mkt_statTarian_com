@@ -35,8 +35,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.85)_70%)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative container mx-auto px-4 pt-16 pb-16 md:pt-24 flex flex-col items-center text-center gap-1 md:gap-6">
-          {/* Logo Mark + Brand Name + Tagline — shifted up on mobile via reduced pt above */}
+        <div className="relative container mx-auto px-4 pt-16 pb-24 md:pt-24 flex flex-col items-center text-center gap-8 md:gap-6">
+          {/* Logo Mark + Brand Name + Tagline */}
           <motion.div
             className="flex flex-col items-center gap-0"
             initial={{ opacity: 0, y: -20 }}
@@ -46,16 +46,16 @@ export function HeroSection() {
             <img
               src={logoMark}
               alt="StatTarian"
-              className="h-20 md:h-40 w-auto mx-auto"
+              className="h-24 md:h-40 w-auto mx-auto"
             />
             <p
-              className="text-foreground text-xl md:text-3xl font-bold tracking-wide leading-tight md:leading-normal"
+              className="text-foreground text-3xl md:text-6xl font-bold tracking-wide leading-tight md:leading-normal"
               style={{ fontFamily: "var(--font-display)" }}
             >
               statTarian
             </p>
             <p
-              className="text-primary text-sm md:text-base tracking-wide font-medium leading-tight md:leading-normal"
+              className="text-primary text-md md:text-base tracking-wide font-medium leading-none md:leading-none -mt-1"
               style={{ fontFamily: "var(--font-body)" }}
             >
               Football. Organised.
@@ -64,7 +64,7 @@ export function HeroSection() {
 
           {/* Heading */}
           <motion.h1
-            className="font-black text-4xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-tight max-w-4xl"
+            className="font-black text-3xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-tight max-w-4xl"
             style={{
               fontFamily: "var(--font-display)",
               textShadow: "0 2px 24px rgba(0,0,0,0.8)",
@@ -80,7 +80,7 @@ export function HeroSection() {
 
           {/* Subheading */}
           <motion.div
-            className="backdrop-blur-[2px] px-4 py-2 rounded-md"
+            className="backdrop-blur-[2px] px-4 py-2 rounded-md -mt-4 md:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}

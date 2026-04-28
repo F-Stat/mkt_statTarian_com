@@ -36,7 +36,7 @@ export default function DataProcessing() {
                 className="text-base md:text-xl text-muted-foreground"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Transparent, safeguarding‑first data handling for Welsh academies.
+                Transparent, safeguarding‑first data handling for academies.
               </p>
             </div>
           </AnimatedSection>
@@ -44,21 +44,22 @@ export default function DataProcessing() {
       </section>
 
       {/* LEGAL CONTENT */}
-      <section className="py-12 md:py-24">
+      <section className="py-12 md:py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           <AnimatedSection>
-
             <h2
-              className="text-3xl md:text-4xl font-bold mb-12"
+              className="text-3xl md:text-4xl font-bold mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Data Processing Overview
+              Data Processing
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
               {/* LEFT COLUMN */}
               <div className="space-y-12">
+                <p className="text-sm text-muted-foreground">
+                  <strong>Last updated:</strong> April 2026
+                </p>
 
                 {/* 1 */}
                 <div className="space-y-4">
@@ -132,7 +133,7 @@ export default function DataProcessing() {
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="space-y-12">
+              <div className="space-y-12 md:pt-[64px]">
 
                 {/* 5 */}
                 <div className="space-y-4">

@@ -22,19 +22,9 @@ const faqs = [
       "Yes. StatTarian has a native integration with FAW COMET via a secure ingestion API, allowing player registration and eligibility data to sync automatically. This removes manual admin work and keeps your squad lists accurate across systems.",
   },
   {
-    question: "How is safeguarding data protected?",
+    question: "Can you migrate our data from other platforms (Pitchero, Hudl, spreadsheets)?",
     answer:
-      "All safeguarding and welfare information is protected by granular, role‑based access controls. Every view, update, and export is fully audit‑logged. Only authorised staff with the correct permissions can access sensitive data, ensuring compliance with club, academy, and FAW safeguarding standards.",
-  },
-  {
-    question: "Can parents access the platform?",
-    answer:
-      "Yes. A dedicated parent portal is included in Pro and Enterprise plans. Parents can view fixtures, confirm availability, receive updates, and communicate with staff through safeguarding‑audited messaging — without exposing internal academy data.",
-  },
-  {
-    question: "Is the platform available in Welsh?",
-    answer:
-      "Yes. StatTarian includes full Welsh/English bilingual support throughout the entire interface. Users can switch languages at any time, and all core modules operate seamlessly in both languages.",
+      "Yes. Data migration support is included in Pro and Enterprise plans. We work with you to map, clean, and import your existing data — whether it comes from Pitchero, Hudl, spreadsheets, or other systems — so you can start with a complete and accurate history.",
   },
   {
     question: "How long does onboarding take?",
@@ -42,29 +32,14 @@ const faqs = [
       "Most clubs and academies are fully onboarded within 2–4 weeks. Our team configures your organisational structure, imports existing data, sets up user roles and permissions, and provides hands‑on training to ensure a smooth transition for coaches, analysts, and administrators.",
   },
   {
-    question: "Can you migrate our data from other platforms (Pitchero, Hudl, spreadsheets)?",
+    question: "Can parents access the platform?",
     answer:
-      "Yes. Data migration support is included in Pro and Enterprise plans. We work with you to map, clean, and import your existing data — whether it comes from Pitchero, Hudl, spreadsheets, or other systems — so you can start with a complete and accurate history.",
+      "Yes. A dedicated parent portal is included in Pro and Enterprise plans. Parents can view fixtures, confirm availability, receive updates, and communicate with staff through safeguarding‑audited messaging — without exposing internal academy data.",
   },
   {
-    question: "What devices do coaches and parents need to use StatTarian?",
+    question: "Can I change plans as my academy grows?",
     answer:
-      "StatTarian works on any modern device — mobile, tablet, or desktop. Coaches can manage sessions and squads on the pitch using their phone, while parents can access the portal from any browser without needing to install an app.",
-  },
-  {
-    question: "Do coaches need training to use StatTarian?",
-    answer:
-      "StatTarian is designed to be intuitive from day one. Most coaches are fully comfortable within a single session. For larger academies, we provide structured onboarding, role‑specific training, and ongoing support to ensure consistent adoption.",
-  },
-  {
-    question: "How does StatTarian support player development?",
-    answer:
-      "The platform centralises player information, attendance, session data, and development insights in one place. Coaches can track progress over time, identify trends, and share structured feedback with players and parents — all within safeguarding‑audited workflows.",
-  },
-  {
-    question: "What makes StatTarian different from other platforms?",
-    answer:
-      "StatTarian is built specifically for academies and pathway environments. It combines safeguarding‑first communication, player development intelligence, bilingual support, and COMET integration in a single, modern platform — reducing admin while strengthening the player journey.",
+      "Yes. You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle, and our team will help you migrate your configuration and data to ensure a seamless transition between tiers.",
   },
 ];
 
@@ -109,7 +84,7 @@ export function Pricing() {
       </section>
 
       {/* Pricing Table */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="container mx-auto px-4">
           <PricingTable recommendedTier={recommendedTier} />
         </div>

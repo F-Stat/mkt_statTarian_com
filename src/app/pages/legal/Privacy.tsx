@@ -44,7 +44,7 @@ export function Privacy() {
       </section>
 
       {/* SUMMARY CARDS */}
-      <section className="py-12 md:py-24 bg-card border-y border-border">
+      <section className="py-12 md:py-16 bg-card border-y border-border">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -90,7 +90,7 @@ export function Privacy() {
         <div className="container mx-auto px-4 max-w-6xl">
           <AnimatedSection>
             <h2
-              className="text-3xl md:text-4xl font-bold mb-12"
+              className="text-3xl md:text-4xl font-bold mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Privacy Policy
