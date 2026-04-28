@@ -9,7 +9,7 @@ import { About } from "./pages/about/About";
 import { Contact } from "./pages/contact/Contact";
 import { Privacy } from "./pages/legal/Privacy";
 import { Terms } from "./pages/legal/Terms";
-import { DataProcessing } from "./pages/legal/DataProcessing";
+import DataProcessing from "./pages/legal/DataProcessing";
 import { Promise } from "./pages/promise/Promise";
 
 export default function App() {

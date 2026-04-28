@@ -92,8 +92,8 @@ export function HeroSection() {
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
               }}
             >
-              statTarian is a Welsh football academy management platform built
-              for youth development programmes — replacing the fragmented tools
+              statTarian is a football academy management platform built
+              for youth development programmes in Cymru — replacing the fragmented tools
               holding your operations together with one connected system. Give
               coaches their time back, keep parents effortlessly informed, and
               ensure safeguarding and compliance never slip through the cracks.

@@ -22,7 +22,7 @@ export function SiteFooter() {
               Football. Organised.
             </p>
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-[240px]">
-              Purpose‑built academy management software for Welsh football academies.
+              Purpose‑built academy management software for football academies in Cymru.
             </p>
           </div>
 

@@ -33,7 +33,6 @@ const featureGroups: FeatureGroup[] = [
       { name: "Multi-academy / regional hub support", values: [false, false, false, true] },
     ],
   },
-
   {
     category: "Match Centre",
     features: [
@@ -48,7 +47,6 @@ const featureGroups: FeatureGroup[] = [
       { name: "Match video upload & clip tagging", values: [false, false, true, true] },
     ],
   },
-
   {
     category: "Welfare & Safeguarding",
     features: [
@@ -66,9 +64,8 @@ const featureGroups: FeatureGroup[] = [
       { name: "FAW licence compliance dashboard", values: [false, false, false, true] },
     ],
   },
-
   {
-    category: "Education & Player Support",
+    category: "Educational Support",
     features: [
       { name: "Education workshop log", values: [false, false, true, true] },
       { name: "Workshop attendance tracking", values: [false, false, true, true] },
@@ -78,7 +75,6 @@ const featureGroups: FeatureGroup[] = [
       { name: "Coach development workshop tracking", values: [false, false, false, true] },
     ],
   },
-
   {
     category: "Development & Analysis",
     features: [
@@ -96,7 +92,6 @@ const featureGroups: FeatureGroup[] = [
       { name: "Custom report builder", values: [false, false, true, true] },
     ],
   },
-
   {
     category: "Communication",
     features: [
@@ -108,7 +103,6 @@ const featureGroups: FeatureGroup[] = [
       { name: "Communication audit log", values: [false, false, false, true] },
     ],
   },
-
   {
     category: "Support & Onboarding",
     features: [
@@ -119,7 +113,6 @@ const featureGroups: FeatureGroup[] = [
     ],
   },
 ]
-
 
 function Cell({ value }: { value: CellValue }) {
   if (value === true) {
@@ -156,7 +149,7 @@ export function ComparisonTable() {
 
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-4 pr-6 font-medium text-muted-foreground w-2/5 sticky left-0 bg-card">
+              <th className="text-left py-4 pr-6 font-medium text-muted-foreground w-2/5 sticky left-0 bg-card z-10">
                 Feature
               </th>
               {tiers.map((tier) => (
@@ -174,20 +167,17 @@ export function ComparisonTable() {
           <tbody>
             {featureGroups.map((group) => (
               <>
-
-                {/* CATEGORY PILL ROW */}
+                {/* CATEGORY ROW — pill cell is sticky, remaining columns span the rest */}
                 <tr key={group.category} className="border-t border-border">
-                  <td
-                    colSpan={5}
-                    className="pt-8 pb-4 sticky left-0 bg-card"
-                  >
+                  {/* Sticky left cell holds the pill */}
+                  <td className="pt-8 pb-4 sticky left-0 bg-card z-10 w-2/5">
                     <span
                       className="
-                        inline-block px-3 py-1 
-                        rounded-full 
-                        text-[10px] md:text-xs 
-                        uppercase tracking-[0.2em] font-semibold 
-                        text-white 
+                        inline-block px-3 py-1
+                        rounded-full
+                        text-[10px] md:text-xs
+                        uppercase tracking-[0.2em] font-semibold
+                        text-white
                         bg-[var(--color-brand-700)]
                       "
                       style={{ fontFamily: "var(--font-heading)" }}
@@ -195,6 +185,8 @@ export function ComparisonTable() {
                       {group.category}
                     </span>
                   </td>
+                  {/* Empty cells for the tier columns so the row height is correct */}
+                  <td colSpan={4} className="pt-8 pb-4 bg-card" />
                 </tr>
 
                 {/* FEATURE ROWS */}
@@ -206,7 +198,7 @@ export function ComparisonTable() {
                       i % 2 === 0 ? "bg-background/20" : ""
                     )}
                   >
-                    <td className="py-3 pr-6 text-muted-foreground sticky left-0 bg-card">
+                    <td className="py-3 pr-6 text-muted-foreground sticky left-0 bg-card z-10">
                       {feature.name}
                     </td>
                     {feature.values.map((value, vi) => (
@@ -216,7 +208,6 @@ export function ComparisonTable() {
                     ))}
                   </tr>
                 ))}
-
               </>
             ))}
           </tbody>

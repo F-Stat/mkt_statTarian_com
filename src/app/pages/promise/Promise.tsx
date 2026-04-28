@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ShieldCheck,
   Clock,
@@ -58,9 +60,9 @@ export function Promise() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <main className="pt-16 md:pt-24">
+    <main className="pt-16 md:pt-24 dark">
 
-      {/* Hero */}
+      {/* Hero — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
@@ -93,8 +95,8 @@ export function Promise() {
         </div>
       </section>
 
-      {/* Why We Exist — 2 column */}
-      <section className="py-12 md:py-24 bg-card border-y border-border">
+      {/* Why We Exist — GREY band (bg-card) */}
+      <section className="py-8 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -168,7 +170,7 @@ export function Promise() {
         </div>
       </section>
 
-      {/* Five Promises — Carousel */}
+      {/* Five Promises — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
@@ -188,7 +190,7 @@ export function Promise() {
                 className="text-3xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Five commitments you can always rely on. 
+                Five commitments you can always rely on.
               </h2>
             </div>
           </AnimatedSection>

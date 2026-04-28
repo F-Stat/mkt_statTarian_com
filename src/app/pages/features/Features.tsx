@@ -1,14 +1,13 @@
-import { ModuleShowcase } from '../../components/marketing/features/ModuleShowcase'
-import { DemoCtaSection } from '../../components/marketing/cta/DemoCtaSection'
-import { AnimatedSection } from '../../components/marketing/AnimatedSection'
+import { ModuleShowcase } from "../../components/marketing/features/ModuleShowcase";
+import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
+import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { RoleCategories } from "../../components/marketing/features/RoleCategories";
-
 
 export function Features() {
   return (
     <main className="pt-16 md:pt-24">
 
-      {/* Page Hero */}
+      {/* Page Hero — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
@@ -17,8 +16,8 @@ export function Features() {
                 <span
                   className="inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
                   style={{
-                    fontFamily: 'var(--font-heading)',
-                    backgroundColor: 'var(--color-brand-700)',
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
                   }}
                 >
                   The Platform
@@ -26,13 +25,13 @@ export function Features() {
               </div>
               <h1
                 className="text-4xl md:text-6xl lg:text-7xl font-bold"
-                style={{ fontFamily: 'var(--font-display)' }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Everything your academy needs, in one place.
               </h1>
               <p
                 className="text-base md:text-xl text-muted-foreground"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 Supporting every role across the academy pathway — end to end.
               </p>
@@ -41,12 +40,14 @@ export function Features() {
         </div>
       </section>
 
-      {/* Roles Categories — placed immediately after hero */}
-      <section className="bg-background">
-        <RoleCategories />
+      {/* Role Categories — GREY BAND */}
+      <section className="bg-card border-y border-border pt-4 pb-4 md:pt-16 md:pb-12">
+        <div className="container mx-auto px-4">
+          <RoleCategories />
+        </div>
       </section>
 
-      {/* Module Showcases */}
+      {/* Module Showcases — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <ModuleShowcase />
@@ -55,5 +56,5 @@ export function Features() {
 
       <DemoCtaSection />
     </main>
-  )
+  );
 }

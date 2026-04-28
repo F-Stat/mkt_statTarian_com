@@ -384,7 +384,9 @@ function SideLayout({
 
 export function ModuleShowcase() {
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div
+      className="space-y-24 md:space-y-32 bg-[#061E29]"
+    >
       {showcases.map((showcase) => {
         if (showcase.layout === "full-width-top") {
           return (

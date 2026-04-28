@@ -8,7 +8,7 @@ const pillClass =
 
 export function Contact() {
   return (
-    <main className="pt-24">
+    <main className="pt-16 md:pt-24">
 
       {/* HERO */}
       <section className="py-12 md:py-16 bg-background">
@@ -46,7 +46,7 @@ export function Contact() {
 
       {/* CONTACT SECTION */}
       <section
-        className="relative py-16 md:py-24"
+        className="relative pt-16 pb-10 md:pt-24 md:pb-16"
         style={{
           backgroundImage: `url(${contactBg})`,
           backgroundSize: 'cover',
@@ -61,7 +61,6 @@ export function Contact() {
 
             {/* LEFT — FORM */}
             <AnimatedSection>
-              {/* White-tinted card for contrast against photo */}
               <div className="bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-6 md:p-10 shadow-2xl">
                 <DemoRequestForm />
               </div>
@@ -140,7 +139,7 @@ export function Contact() {
                       <div className="text-sm font-semibold text-neutral-50">Email us</div>
                       <a
                         href="mailto:hello@stattarian.com"
-                        className="text-sm text-accent hover:underline"
+                        className="text-sm text-neutral-50 hover:text-primary hover:underline transition-colors"
                       >
                         hello@stattarian.com
                       </a>

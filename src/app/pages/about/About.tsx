@@ -68,7 +68,6 @@ const WALES_IMAGE = walesImage;
 export function About() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (!scrollRef.current) return;
@@ -79,10 +78,11 @@ export function About() {
   }, []);
 
   return (
-    <main className="pt-4 md:pt-24">
-      {/* Hero */}
+    <main className="pt-16 md:pt-24">
+
+      {/* Hero — Promise-aligned */}
       <section
-        className="relative py-32 md:py-48 bg-background bg-cover bg-center"
+        className="relative py-12 md:py-24 bg-background bg-cover bg-center"
         style={{
           backgroundImage: HERO_IMAGE ? `url(${HERO_IMAGE})` : undefined,
         }}
@@ -103,13 +103,18 @@ export function About() {
                   About statTarian
                 </span>
               </div>
+
               <h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Built Inside Academy Football.
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+
+              <p
+                className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
                 statTarian was created by practitioners who understand the
                 demands of youth development.
               </p>
@@ -118,13 +123,13 @@ export function About() {
         </div>
       </section>
 
-      {/* Founder Story — mobile spacing tightened */}
-      <section className="pt-16 md:pt-24 pb-24 bg-card">
+      {/* Founder Story — Promise spacing */}
+      <section className="py-12 md:py-24 bg-card">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <AnimatedSection>
               <div className="flex flex-col items-center text-center space-y-10">
-                {/* Founder Photo */}
+
                 <div className="h-40 w-40 rounded-full overflow-hidden bg-muted border border-border shadow-sm ring-2 ring-[var(--color-brand-700)]">
                   <img
                     src={FOUNDER_IMAGE}
@@ -134,7 +139,6 @@ export function About() {
                   />
                 </div>
 
-                {/* Quote */}
                 <h2
                   className="text-3xl md:text-4xl font-bold leading-tight mt-4 mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
@@ -142,10 +146,8 @@ export function About() {
                   “Welsh academies deserved better — so we built it.”
                 </h2>
 
-                {/* Divider */}
                 <div className="w-24 h-px bg-border/80 mx-auto mb-2" />
 
-                {/* Story */}
                 <div className="max-w-2xl mx-auto space-y-6 text-left md:text-center">
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     I’ve spent nearly two decades working at the intersection of
@@ -178,7 +180,6 @@ export function About() {
                   </p>
                 </div>
 
-                {/* Signature */}
                 <div className="pt-4 text-center opacity-90 space-y-1">
                   <p
                     className="font-semibold"
@@ -196,8 +197,8 @@ export function About() {
         </div>
       </section>
 
-      {/* Why Wales */}
-      <section className="py-24 bg-background">
+      {/* Why Wales — Promise spacing */}
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection>
@@ -214,14 +215,18 @@ export function About() {
                       Why Wales
                     </span>
                   </div>
+
                   <h2
-                    className="text-4xl font-bold"
+                    className="text-4xl md:text-5xl font-bold"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     Built for Wales — not adapted for it.
                   </h2>
 
-                  <p className="text-lg text-muted-foreground">
+                  <p
+                    className="text-base md:text-lg text-muted-foreground"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     statTarian was designed from the ground up for the FAW
                     pathway. That means bilingual Welsh/English support
                     throughout, safeguarding and COMET compliance built into
@@ -229,7 +234,10 @@ export function About() {
                     academies actually operate.
                   </p>
 
-                  <p className="text-lg text-muted-foreground">
+                  <p
+                    className="text-base md:text-lg text-muted-foreground"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     This isn’t a Premier League tool retrofitted for Wales. It’s
                     a Welsh platform built for grassroots clubs and regional
                     academies — the backbone of Welsh football.
@@ -255,11 +263,11 @@ export function About() {
         </div>
       </section>
 
-      {/* Problem → Solution */}
-      <section className="py-24 bg-card">
+      {/* Problem → Solution — Promise spacing */}
+      <section className="py-12 md:py-24 bg-card">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center mb-14 space-y-4">
+            <div className="text-center mb-12 md:mb-16 space-y-4">
               <div>
                 <span
                   className={pillClass}
@@ -271,13 +279,18 @@ export function About() {
                   What We Replaced
                 </span>
               </div>
+
               <h2
                 className="text-4xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 From chaos to clarity.
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
+
+              <p
+                className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
                 Before statTarian, Welsh academies were forced to stitch
                 together disconnected tools. We replaced all of it with a
                 single, safeguarding‑first operating system.
@@ -309,11 +322,11 @@ export function About() {
         </div>
       </section>
 
-      {/* Values — homepage-style carousel */}
-      <section className="py-24 bg-background">
+      {/* Values — Promise spacing */}
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center mb-16 space-y-4">
+            <div className="text-center mb-12 md:mb-16 space-y-4">
               <div>
                 <span
                   className={pillClass}
@@ -325,6 +338,7 @@ export function About() {
                   Our Values
                 </span>
               </div>
+
               <h2
                 className="text-4xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -335,32 +349,32 @@ export function About() {
           </AnimatedSection>
 
           <div className="relative max-w-6xl mx-auto">
-            {/* Left arrow (mobile only) */}
+
+            {/* Mobile arrows */}
             <button
               onClick={() =>
                 scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })
               }
               className="
-    flex md:hidden absolute left-3 top-1/2 -translate-y-1/2 z-20
-    h-10 w-10 rounded-full bg-[var(--color-brand-700)]
-    text-white items-center justify-center
-    shadow-md active:scale-95 transition
-  "
+                flex md:hidden absolute left-3 top-1/2 -translate-y-1/2 z-20
+                h-10 w-10 rounded-full bg-[var(--color-brand-700)]
+                text-white items-center justify-center
+                shadow-md active:scale-95 transition
+              "
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
 
-            {/* Right arrow (mobile only) */}
             <button
               onClick={() =>
                 scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })
               }
               className="
-    flex md:hidden absolute right-3 top-1/2 -translate-y-1/2 z-20
-    h-10 w-10 rounded-full bg-[var(--color-brand-700)]
-    text-white items-center justify-center
-    shadow-md active:scale-95 transition
-  "
+                flex md:hidden absolute right-3 top-1/2 -translate-y-1/2 z-20
+                h-10 w-10 rounded-full bg-[var(--color-brand-700)]
+                text-white items-center justify-center
+                shadow-md active:scale-95 transition
+              "
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -395,12 +409,14 @@ export function About() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <value.icon className="h-6 w-6 text-primary" />
                   </div>
+
                   <h3
                     className="text-2xl font-bold"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {value.title}
                   </h3>
+
                   <p className="text-muted-foreground">{value.description}</p>
                 </motion.div>
               ))}
