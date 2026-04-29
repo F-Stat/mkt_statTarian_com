@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatedSection } from "../AnimatedSection";
-import { ArrowRight } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 import leadershipImg from "../../../../assets/roles/leadership.png";
 import coachingImg from "../../../../assets/roles/coaching.png";
@@ -14,7 +14,7 @@ const categories = [
     title: "Academy Leadership\n& Operations",
     subtitle: "Directors, Phase Coordinators",
     description:
-      "Full visibility across every team, age group, and staff member — from one connected dashboard.",
+      "Total oversight of squads, staff, welfare, and operations — all in one connected system that removes admin drift and keeps your academy running in rhythm.",
     image: leadershipImg,
   },
   {
@@ -22,7 +22,7 @@ const categories = [
     title: "Coaching\n& Performance",
     subtitle: "Head Coaches, Coaches, Analysts",
     description:
-      "Plan sessions, track attendance, and monitor development — all from the touchline.",
+      "Session plans, attendance, video, and development insights surfaced instantly — giving coaches more time on the grass and less time chasing information.",
     image: coachingImg,
   },
   {
@@ -30,7 +30,7 @@ const categories = [
     title: "Physio\n& Medical",
     subtitle: "Physios, Sports Scientists",
     description:
-      "Injury records, return-to-play protocols, and medical history — always up to date.",
+      "Screenings, injuries, RTP notes, and medical history stored cleanly and securely — with every update reflected across the academy in real time.",
     image: physioImg,
   },
   {
@@ -38,7 +38,7 @@ const categories = [
     title: "Welfare\n& Safeguarding",
     subtitle: "Safeguarding Leads, Welfare Officers",
     description:
-      "Concern reporting, audit trails, and case management — built to FAW standards.",
+      "A dedicated, access‑controlled space for concerns, welfare notes, and DBS tracking — built to protect young people and support compliant, accountable practice.",
     image: welfareImg,
   },
   {
@@ -46,7 +46,7 @@ const categories = [
     title: "Parents\n& Players",
     subtitle: "Parents, Players",
     description:
-      "Fixtures, updates, and safe messaging — no app needed, no information missed.",
+      "Fixtures, updates, and secure messaging delivered clearly and reliably — no apps, no noise, and no missed information.",
     image: parentsImg,
   },
 ];
@@ -106,7 +106,18 @@ export function RoleCategories() {
                     }}
                   />
 
-                  <div className="absolute inset-0 flex flex-col justify-end p-5">
+                  {/* TEXT BLOCK WITH HIGHER LIFT */}
+                  <div
+                    className={`
+                      absolute inset-0 flex flex-col justify-end p-5
+                      transition-transform duration-300
+                      ${
+                        isActive
+                          ? "-translate-y-8"
+                          : "translate-y-0 group-hover:-translate-y-1"
+                      }
+                    `}
+                  >
                     <p
                       className="text-white font-black uppercase tracking-wide leading-tight text-base md:text-sm lg:text-base"
                       style={{
@@ -122,7 +133,7 @@ export function RoleCategories() {
                     <div
                       className="overflow-hidden transition-all duration-400 ease-out"
                       style={{
-                        maxHeight: isActive ? "6rem" : "0",
+                        maxHeight: isActive ? "9rem" : "0",
                       }}
                     >
                       <p className="text-white/80 text-xs leading-relaxed mt-3 border-t border-white/20 pt-3">
@@ -130,18 +141,15 @@ export function RoleCategories() {
                       </p>
                     </div>
 
+                    {/* ARROW — STATIC, NO MOVEMENT */}
                     <div
                       className={`
                         flex items-center gap-1 mt-2 text-primary text-xs font-semibold
                         transition-all duration-300
-                        ${
-                          isActive
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0"
-                        }
+                        ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
                       `}
                     >
-                      <ArrowRight className="h-3 w-3" />
+                      <ArrowUp className="h-3 w-3" />
                     </div>
                   </div>
 

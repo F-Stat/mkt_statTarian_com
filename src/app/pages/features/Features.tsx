@@ -1,12 +1,13 @@
-import { ModuleShowcase } from "../../components/marketing/features/ModuleShowcase";
 import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { RoleCategories } from "../../components/marketing/features/RoleCategories";
+import { ModuleShowcase } from "../../components/marketing/features/ModuleShowcase";
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export function Features() {
   return (
     <main className="pt-16 md:pt-24">
-
       {/* Page Hero — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -40,17 +41,19 @@ export function Features() {
         </div>
       </section>
 
-      {/* Role Categories — GREY BAND */}
-      <section className="bg-card border-y border-border pt-4 pb-4 md:pt-16 md:pb-12">
+      {/* Role Categories — clean, tight, no grey band, no border */}
+      <section className="py-4 md:py-8 bg-background">
         <div className="container mx-auto px-4">
           <RoleCategories />
         </div>
       </section>
 
-      {/* Module Showcases — navy */}
+      {/* Feature Showcase — navy */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <ModuleShowcase />
+          <AnimatedSection>
+            <ModuleShowcase />
+          </AnimatedSection>
         </div>
       </section>
 

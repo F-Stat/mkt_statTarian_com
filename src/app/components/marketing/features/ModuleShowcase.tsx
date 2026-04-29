@@ -1,25 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   GraduationCap,
   TrendingUp,
   Film,
   ShieldCheck,
   MessageSquare,
-  ChevronDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// ─── Real Images (Vite‑safe imports) ─────────────────────────────────────────
 
 import mockWelfare from "../../../../assets/mock-placeholder.png";
 import mockPlayer from "../../../../assets/mock-placeholder.png";
 import mockComms from "../../../../assets/mock-placeholder.png";
 import mockPerformance from "../../../../assets/mock-placeholder.png";
 
-
-// Map showcase.id → actual image
 const showcaseImages: Record<string, string> = {
   players: mockPlayer,
   coaching: mockPerformance,
@@ -28,7 +23,54 @@ const showcaseImages: Record<string, string> = {
   comms: mockComms,
 };
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// UI PRIMITIVES
+// ─────────────────────────────────────────────────────────────────────────────
+
+function CheckIcon() {
+  return (
+    <span className="flex-shrink-0 mt-0.5 flex items-center justify-center rounded-full w-4 h-4 bg-[#e1f5ee]">
+      <svg width="9" height="9" viewBox="0 0 10 10">
+        <polyline
+          points="2,5 4.5,7.5 8,2.5"
+          stroke="#1d9e75"
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-2.5 text-xs font-medium tracking-widest uppercase text-[var(--color-brand-500)]">
+      {children}
+    </p>
+  );
+}
+
+// Larger bullets
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="flex flex-col gap-3">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex items-start gap-3 text-base md:text-lg leading-relaxed text-[var(--color-text-secondary)]"
+        >
+          <CheckIcon />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA (features removed)
+// ─────────────────────────────────────────────────────────────────────────────
 
 const showcases = [
   {
@@ -36,31 +78,15 @@ const showcases = [
     label: "Player Management",
     icon: GraduationCap,
     tagline: "Academy + Home",
-    heading: "Every player. Every detail. One screen.",
+    heading: "Every player. Every detail. Zero chasing.",
     description:
-      "From first registration to season end, every player record lives in one place. Role-personalised dashboards mean each staff member sees exactly what they need — nothing more, nothing less.",
-    layout: "full-width-top",
-    features: [
-      {
-        title: "Player Profiles",
-        description:
-          "Registration, biographical data, maturation screening, and FAW COMET linkage — all in one record.",
-      },
-      {
-        title: "Squad Management",
-        description:
-          "Organise players across age groups, manage trials, and plan your season structure from one view.",
-      },
-      {
-        title: "FAW COMET Integration",
-        description:
-          "Native data ingestion from FAW COMET — no manual exports, no duplicate entry.",
-      },
-      {
-        title: "Personalised Dashboards",
-        description:
-          "Every role sees a tailored view — directors get the big picture, coaches get their squad.",
-      },
+      "From registration to release, every player’s information lives in one clean, reliable record. No more spreadsheets, no more missing consents, no more “Can you resend that?” — just a single source of truth that updates itself.",
+    eyebrow: "Player profiles",
+    bullets: [
+      "Medical records, consents, and emergency contacts always up to date",
+      "Role‑based visibility so coaches see performance and parents see schedules",
+      "Full season history with notes, injuries, and attendance in one timeline",
+      "COMET‑synced registrations that stay accurate without manual work",
     ],
   },
   {
@@ -68,31 +94,15 @@ const showcases = [
     label: "Coaching & Performance",
     icon: TrendingUp,
     tagline: "Performance + Reporting",
-    heading: "Data that drives development.",
+    heading: "Data that actually moves development forward.",
     description:
-      "Track every player's journey with Individual Development Plans, physical benchmarks, and session load monitoring. Academy-wide dashboards give directors and analysts the full picture.",
-    layout: "left-text",
-    features: [
-      {
-        title: "Individual Development Plans",
-        description:
-          "Build structured IDPs with season objectives, position pathways, and promotion readiness flags.",
-      },
-      {
-        title: "Load & RPE Tracking",
-        description:
-          "Monitor session load and Rate of Perceived Exertion to flag fatigue before it becomes injury.",
-      },
-      {
-        title: "Performance Benchmarks",
-        description:
-          "Physical testing, benchmarks, and progress tracking — always export-ready.",
-      },
-      {
-        title: "Analytics & Reports",
-        description:
-          "Multi-team dashboards, attendance trends, and branded PDF exports at the click of a button.",
-      },
+      "Track progress with clarity. Every benchmark, every plan, every session load — automatically organised into dashboards that help coaches coach and help directors see the bigger picture.",
+    eyebrow: "Development data",
+    bullets: [
+      "Season development plans with clear goal‑tracking",
+      "Load and wellness monitoring with trend alerts",
+      "Benchmarks by age group, position, and phase",
+      "One‑click analytics and parent‑ready PDF reports",
     ],
   },
   {
@@ -100,31 +110,15 @@ const showcases = [
     label: "Media",
     icon: Film,
     tagline: "Video Library",
-    heading: "Your footage. Secure, tagged, and always findable.",
+    heading: "Your footage — organised, secure, and instantly useful.",
     description:
-      "A club-hosted video library linked to every match and training session. Tag players, annotate timestamps, and build coach playlists — with right-to-erasure workflows built in.",
-    layout: "right-text",
-    features: [
-      {
-        title: "Secure Video Library",
-        description:
-          "Club-hosted, isolated footage — no third-party apps, no compliance headaches.",
-      },
-      {
-        title: "Player Tagging",
-        description:
-          "Tag individual players to clips and link directly to match events and timestamps.",
-      },
-      {
-        title: "Coach Playlists",
-        description:
-          "Build and share curated playlists for individual players or the full squad.",
-      },
-      {
-        title: "Filming Compliance",
-        description:
-          "Automatic FAW filming compliance tracking with audit-ready records.",
-      },
+      "A club‑hosted video library that finally removes the chaos of shared drives and lost clips. Tag players, build playlists, and surface the moments that matter — all without ever risking data leakage.",
+    eyebrow: "Video library",
+    bullets: [
+      "Secure hosting with no third‑party sharing",
+      "Player tagging that pushes clips straight into profiles",
+      "Filters for match, session type, date, or player",
+      "Fully GDPR‑aligned with right‑to‑erasure workflows",
     ],
   },
   {
@@ -134,29 +128,13 @@ const showcases = [
     tagline: "Welfare Module",
     heading: "Safeguarding that never slips through the cracks.",
     description:
-      "A completely isolated module for welfare and medical records. Only the right people see the right information — with a full audit trail and escalation workflows built for the seriousness the role demands.",
-    layout: "left-text",
-    features: [
-      {
-        title: "Case Management",
-        description:
-          "Dedicated safeguarding case logs, completely isolated from Club Admin access.",
-      },
-      {
-        title: "Medical Records",
-        description:
-          "Access-gated medical records and medication logs — only visible to authorised staff.",
-      },
-      {
-        title: "Welfare Concern Tracking",
-        description:
-          "Log, track, and escalate welfare concerns with a full timestamped audit trail.",
-      },
-      {
-        title: "DBS Status Tracking",
-        description:
-          "Monitor DBS status across all staff with automated renewal reminders.",
-      },
+      "Designed with DSO workflows at the centre — not as an afterthought. Every concern, record, and escalation is logged, tracked, and protected with the strictest access controls.",
+    eyebrow: "Safeguarding",
+    bullets: [
+      "DSO‑only case management, isolated from coaching staff",
+      "Medical and welfare records with full access audit trail",
+      "Online safety checks and welfare workflows built‑in",
+      "DBS tracking with automatic expiry alerts",
     ],
   },
   {
@@ -166,248 +144,131 @@ const showcases = [
     tagline: "Communication + Account",
     heading: "One channel. Zero missed messages.",
     description:
-      "Replace the group chat chaos with secure, auditable messaging. Parents stay informed, fixtures get confirmed, and your organisation stays in control — from RSVPs to billing.",
-    layout: "full-width-top",
-    features: [
-      {
-        title: "Parent Portal",
-        description:
-          "Parents access fixture info, RSVP to sessions, and receive announcements — all in one place.",
-      },
-      {
-        title: "Group Announcements",
-        description:
-          "Send targeted messages to squads, age groups, or the whole academy with read receipts.",
-      },
-      {
-        title: "Fixture RSVPs",
-        description:
-          "Attendance confirmations built in — no chasing, no spreadsheets.",
-      },
-      {
-        title: "Organisation Settings",
-        description:
-          "Manage billing, user roles, seat allocation, and permissions from one admin panel.",
-      },
+      "Replace scattered WhatsApp groups with structured, auditable communication. Parents stay informed, coaches stay in control, and your academy finally owns the conversation.",
+    eyebrow: "Communications",
+    bullets: [
+      "Parent portal with push notifications and read receipts",
+      "Squad announcements and fixture updates in one place",
+      "Picture‑safe links that never expose personal phones",
+      "Organisation‑level controls over who can message whom",
     ],
   },
 ];
 
-// ─── Visual Component (Vite‑safe, perfect fit) ───────────────────────────────
+type ShowcaseId = typeof showcases[number]["id"];
 
-function Visual({ showcase }: { showcase: typeof showcases[0] }) {
-  const img = showcaseImages[showcase.id];
+// ─────────────────────────────────────────────────────────────────────────────
+// VISUAL WITH THUMBNAILS
+// ─────────────────────────────────────────────────────────────────────────────
+
+function Visual({ showcase }: { showcase: (typeof showcases)[number] }) {
+  const images = [
+    showcaseImages[showcase.id],
+    showcaseImages[showcase.id],
+    showcaseImages[showcase.id],
+    showcaseImages[showcase.id],
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
-      <img
-        src={img}
-        alt={showcase.heading}
-        className="absolute inset-0 w-full h-full object-cover"
-        draggable={false}
-      />
+    <div className="space-y-4">
+      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
+        <img
+          src={images[activeIndex]}
+          alt={showcase.heading}
+          className="absolute inset-0 w-full h-full object-cover"
+          draggable={false}
+        />
+      </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-background/60 to-transparent pointer-events-none" />
+      <div className="grid grid-cols-4 gap-3">
+        {images.map((img, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveIndex(i)}
+            className={cn(
+              "relative aspect-[4/3] rounded-lg overflow-hidden border transition-all",
+              activeIndex === i
+                ? "border-[var(--color-brand-700)]"
+                : "border-border hover:border-[var(--color-brand-500)]"
+            )}
+          >
+            <img
+              src={img}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
 
-// ─── Layout: Full-width visual top ───────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// UNIFIED 2‑COLUMN LAYOUT FOR ALL MODULES
+// ─────────────────────────────────────────────────────────────────────────────
 
-function FullWidthTopLayout({ showcase }: { showcase: typeof showcases[0] }) {
-  const [activeFeature, setActiveFeature] = useState(0);
-
+function TwoColumnLayout({ showcase }: { showcase: (typeof showcases)[number] }) {
   return (
-    <div className="space-y-0">
-      <div className="space-y-3 mb-6">
-        <p
-          className="text-xs uppercase tracking-widest text-primary font-semibold"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          {showcase.tagline}
-        </p>
-        <h3
-          className="text-2xl md:text-4xl font-bold"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="space-y-6">
+        <Eyebrow>{showcase.eyebrow}</Eyebrow>
+
+        <h3 className="text-3xl md:text-4xl font-bold font-display leading-tight">
           {showcase.heading}
         </h3>
-        <p className="text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
+
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
           {showcase.description}
         </p>
+
+        <BulletList items={showcase.bullets} />
       </div>
 
-      <div className="rounded-t-2xl overflow-hidden border border-border border-b-0">
-        <Visual showcase={showcase} />
-      </div>
-
-      <div className="border border-border rounded-b-2xl bg-card overflow-hidden">
-        <div className="grid grid-cols-2 md:grid-cols-4">
-          {showcase.features.map((f, i) => (
-            <button
-              key={f.title}
-              onClick={() => setActiveFeature(i)}
-              className={cn(
-                "relative text-left p-4 md:p-5 border-r border-border last:border-r-0 transition-colors",
-                i >= 2 && "border-t border-border md:border-t-0",
-                activeFeature === i ? "bg-primary/5" : "hover:bg-primary/5"
-              )}
-            >
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-transparent">
-                {activeFeature === i && <div className="h-full bg-primary" />}
-              </div>
-              <p
-                className={cn(
-                  "text-xs md:text-sm font-bold mb-1 transition-colors",
-                  activeFeature === i
-                    ? "text-foreground"
-                    : "text-muted-foreground"
-                )}
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {f.title}
-              </p>
-              <p
-                className={cn(
-                  "text-xs leading-relaxed transition-colors hidden md:block",
-                  activeFeature === i
-                    ? "text-muted-foreground"
-                    : "text-muted-foreground/50"
-                )}
-              >
-                {f.description}
-              </p>
-            </button>
-          ))}
-        </div>
-      </div>
+      <Visual showcase={showcase} />
     </div>
   );
 }
 
-// ─── Layout: Side-by-side (left or right text) ───────────────────────────────
-
-function SideLayout({
-  showcase,
-  flip = false,
-}: {
-  showcase: typeof showcases[0];
-  flip?: boolean;
-}) {
-  const [openFeature, setOpenFeature] = useState<number | null>(0);
-
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-      <div className={cn("space-y-6", flip && "lg:order-2")}>
-        <div className="space-y-3">
-          <p
-            className="text-xs uppercase tracking-widest text-primary font-semibold"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            {showcase.tagline}
-          </p>
-          <h3
-            className="text-2xl md:text-4xl font-bold"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {showcase.heading}
-          </h3>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            {showcase.description}
-          </p>
-        </div>
-
-        <div className="space-y-1">
-          {showcase.features.map((f, i) => (
-            <div
-              key={f.title}
-              className="border border-border rounded-xl overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenFeature(openFeature === i ? null : i)}
-                className={cn(
-                  "w-full flex items-center justify-between px-4 py-3.5 text-left transition-colors",
-                  openFeature === i
-                    ? "bg-primary/10"
-                    : "bg-card hover:bg-primary/5"
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <showcase.icon
-                    className={cn(
-                      "h-4 w-4 shrink-0 transition-colors",
-                      openFeature === i
-                        ? "text-primary"
-                        : "text-muted-foreground"
-                    )}
-                    strokeWidth={1.5}
-                  />
-                  <span
-                    className={cn(
-                      "text-sm font-semibold transition-colors",
-                      openFeature === i
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    )}
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {f.title}
-                  </span>
-                </div>
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 text-muted-foreground transition-transform shrink-0",
-                    openFeature === i && "rotate-180"
-                  )}
-                />
-              </button>
-              {openFeature === i && (
-                <div className="px-4 py-3 bg-primary/5 border-t border-border">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {f.description}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={cn(flip && "lg:order-1")}>
-        <Visual showcase={showcase} />
-      </div>
-    </div>
-  );
-}
-
-// ─── Main Export ──────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// MAIN EXPORT
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function ModuleShowcase() {
+  const [active, setActive] = useState<ShowcaseId>("players");
+
+  const activeShowcase = useMemo(
+    () => showcases.find((s) => s.id === active)!,
+    [active]
+  );
+
   return (
-    <div
-      className="space-y-24 md:space-y-32 bg-[#061E29]"
-    >
-      {showcases.map((showcase) => {
-        if (showcase.layout === "full-width-top") {
-          return (
-            <div key={showcase.id}>
-              <FullWidthTopLayout showcase={showcase} />
-            </div>
-          );
-        }
-        if (showcase.layout === "right-text") {
-          return (
-            <div key={showcase.id}>
-              <SideLayout showcase={showcase} flip />
-            </div>
-          );
-        }
-        return (
-          <div key={showcase.id}>
-            <SideLayout showcase={showcase} />
-          </div>
-        );
-      })}
+    <div className="bg-[#061E29]">
+      <div className="grid grid-cols-2 gap-2 mb-12 md:flex md:flex-wrap">
+        {showcases.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActive(tab.id)}
+            className={cn(
+              "flex items-center justify-center px-4 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-200 border cursor-pointer",
+              "w-[200px]",
+              tab.id === active
+                ? "bg-[var(--color-brand-700)] text-white border-[var(--color-brand-700)]"
+                : "bg-transparent text-[var(--color-brand-500)] border-[var(--color-brand-500)]"
+            )}
+            style={{ borderWidth: "1.5px" }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div key={active} className="animate-in fade-in duration-200">
+        <TwoColumnLayout showcase={activeShowcase} />
+      </div>
     </div>
   );
 }
