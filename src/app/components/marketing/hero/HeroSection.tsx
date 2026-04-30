@@ -49,17 +49,18 @@ export function HeroSection() {
               className="h-24 md:h-40 w-auto mx-auto"
             />
             <p
-              className="text-foreground text-3xl md:text-6xl font-bold tracking-wide leading-tight md:leading-normal"
+              className="text-foreground text-3xl md:text-6xl font-bold tracking-wide leading-none"
               style={{ fontFamily: "var(--font-display)" }}
             >
               statTarian
             </p>
-            <p
-              className="text-primary text-md md:text-base tracking-wide font-medium leading-none md:leading-none -mt-1"
-              style={{ fontFamily: "var(--font-body)" }}
+
+            <h3
+              className="font-semibold text-xs uppercase tracking-widest text-primary"
+              style={{ fontFamily: "var(--font-heading)" }}
             >
               Football. Organised.
-            </p>
+            </h3>
           </motion.div>
 
           {/* Heading */}
@@ -92,11 +93,12 @@ export function HeroSection() {
                 textShadow: "0 2px 12px rgba(0,0,0,0.9)",
               }}
             >
-              statTarian is a football academy management platform built
-              for youth development programmes in Cymru — replacing the fragmented tools
-              holding your operations together with one connected system. Give
-              coaches their time back, keep parents effortlessly informed, and
-              ensure safeguarding and compliance never slip through the cracks.
+              statTarian is a football academy management platform built for
+              youth development programmes in Cymru — replacing the fragmented
+              tools holding your operations together with one connected system.
+              Give coaches their time back, keep parents effortlessly informed,
+              and ensure safeguarding and compliance never slip through the
+              cracks.
             </p>
           </motion.div>
 

@@ -5,7 +5,7 @@ type TierKey = "core" | "performance" | "advanced" | "elite"
 const tiers = [
   {
     name: "Core",
-    persona: "Grassroots academies and small clubs",
+    persona: "For academies building structure and centralising operations.",
     price: "£99/month",
     features: [
       "Player profiles & attendance",
@@ -18,7 +18,7 @@ const tiers = [
   },
   {
     name: "Performance",
-    persona: "Academies running multiple squads",
+    persona: "For academies levelling up coaching, analysis, and player development.",
     price: "£299/month",
     features: [
       "All Core features",
@@ -31,7 +31,7 @@ const tiers = [
   },
   {
     name: "Advanced",
-    persona: "Academies with structured development",
+    persona: "For multi‑team programmes running full player pathways.",
     price: "£599/month",
     features: [
       "All Performance features",
@@ -45,8 +45,8 @@ const tiers = [
     tier: "advanced" as TierKey,
   },
   {
-    name: "Elite",
-    persona: "Pro academies, regional hubs & governing bodies",
+    name: "Bespoke integrations",
+    persona: "For governing bodies, multi‑site academies, and enterprise‑scale operations.",
     price: "Contact us",
     features: [
       "All Advanced features",

@@ -1,6 +1,6 @@
 import { HeroSection } from '../components/marketing/hero/HeroSection'
 import { StatsBar } from '../components/marketing/social-proof/StatsBar'
-import { PersonaSection } from '../components/marketing/home/PersonaSection'
+import { Tools } from "../components/marketing/home/tools";
 import { CombinedSection } from '../components/marketing/home/CombinedSection'
 import ctaBg from '@/assets/cta-bg.jpg'
 
@@ -9,7 +9,7 @@ export function Home() {
     <main>
       <HeroSection />
       <StatsBar />
-      <PersonaSection />
+      <Tools />
 
       {/* Shared background wrapper */}
       <div

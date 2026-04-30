@@ -2,16 +2,22 @@
 
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { ShieldCheck, Lock, Globe, Users } from "lucide-react";
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
 
 const pillClass =
   "inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
+const now = new Date();
+const currentMonthYear = now.toLocaleString("en-GB", {
+  month: "long",
+  year: "numeric",
+});
+
 export default function DataProcessing() {
   return (
     <main className="pt-16 md:pt-24 bg-background text-neutral-100 min-h-screen">
-
       {/* HERO */}
-      <section className="py-12 md:py-24">
+      <HeroSurface className="py-12 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto space-y-4 md:space-y-6">
@@ -41,7 +47,7 @@ export default function DataProcessing() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </HeroSurface>
 
       {/* LEGAL CONTENT */}
       <section className="py-12 md:py-12">
@@ -58,7 +64,7 @@ export default function DataProcessing() {
               {/* LEFT COLUMN */}
               <div className="space-y-12">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Last updated:</strong> April 2026
+                  <strong>Last updated:</strong> {currentMonthYear}
                 </p>
 
                 {/* 1 */}
@@ -70,9 +76,11 @@ export default function DataProcessing() {
                     1. Our Role
                   </span>
                   <p>
-                    statTarian Limited acts as a <strong>Data Processor</strong> for all personal
-                    data uploaded to or generated within the Platform by Clubs. Clubs act as
-                    <strong> Data Controllers</strong> and determine the lawful basis for processing.
+                    statTarian Limited acts as a <strong>Data Processor</strong>{" "}
+                    for all personal data uploaded to or generated within the
+                    Platform by Clubs. Clubs act as
+                    <strong> Data Controllers</strong> and determine the lawful
+                    basis for processing.
                   </p>
                 </div>
 
@@ -86,7 +94,9 @@ export default function DataProcessing() {
                   </span>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Identity data (name, DOB, gender, photograph)</li>
-                    <li>Contact data (address, email, phone, guardian details)</li>
+                    <li>
+                      Contact data (address, email, phone, guardian details)
+                    </li>
                     <li>Performance data (training loads, match events)</li>
                     <li>Safeguarding and wellbeing data</li>
                     <li>Medical and injury records</li>
@@ -104,7 +114,8 @@ export default function DataProcessing() {
                     3. Children’s Data
                   </span>
                   <p>
-                    The Platform includes enhanced protections for minors, including:
+                    The Platform includes enhanced protections for minors,
+                    including:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Row‑Level Security (RLS)</li>
@@ -124,17 +135,15 @@ export default function DataProcessing() {
                     4. Video Footage
                   </span>
                   <p>
-                    Video footage is treated as sensitive personal data. Clubs control retention
-                    and deletion. statTarian deletes footage within 30 days of a verified erasure
-                    request.
+                    Video footage is treated as sensitive personal data. Clubs
+                    control retention and deletion. statTarian deletes footage
+                    within 30 days of a verified erasure request.
                   </p>
                 </div>
-
               </div>
 
               {/* RIGHT COLUMN */}
               <div className="space-y-12 md:pt-[64px]">
-
                 {/* 5 */}
                 <div className="space-y-4">
                   <span
@@ -178,8 +187,9 @@ export default function DataProcessing() {
                     7. International Transfers
                   </span>
                   <p>
-                    All personal data is stored in the UK/EEA. Transfers outside the EEA use
-                    Standard Contractual Clauses (SCCs) and additional safeguards.
+                    All personal data is stored in the UK/EEA. Transfers outside
+                    the EEA use Standard Contractual Clauses (SCCs) and
+                    additional safeguards.
                   </p>
                 </div>
 
@@ -192,19 +202,18 @@ export default function DataProcessing() {
                     8. Contact
                   </span>
                   <p>
-                    For data protection enquiries:<br />
-                    <strong>privacy@stattarian.com</strong><br />
+                    For data protection enquiries:
+                    <br />
+                    <strong>privacy@stattarian.com</strong>
+                    <br />
                     Wales, United Kingdom
                   </p>
                 </div>
-
               </div>
-
             </div>
           </AnimatedSection>
         </div>
       </section>
-
     </main>
   );
 }

@@ -135,7 +135,7 @@ export function CombinedSection() {
               className="text-3xl md:text-5xl font-bold"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Get ready to see it in action.
+              Actions Speak Volumes.
             </h3>
             <p
               className="text-base md:text-xl text-neutral-200"

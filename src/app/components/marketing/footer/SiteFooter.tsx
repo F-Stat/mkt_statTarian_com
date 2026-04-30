@@ -6,23 +6,31 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-background text-muted">
       <div className="container mx-auto px-4 pt-12 md:pt-20 pb-8 md:pb-12">
         <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-6 md:gap-8 mb-8 md:mb-10">
           {/* Column 1: Brand — full width + centred on mobile */}
           <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
-            <img src={logo} alt="statTarian Logo" className="h-12 w-auto mb-1" />
+            <img
+              src={logo}
+              alt="statTarian Logo"
+              className="h-12 w-auto mb-1"
+            />
             <h3
-              className="text-lg md:text-xl font-bold mb-0"
+              className="text-lg md:text-xl font-bold mb-0 text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
               statTarian
             </h3>
-            <p className="text-xs text-primary font-medium mb-2">
+           <h3
+              className="font-semibold mb-2 text-xs uppercase tracking-widest text-primary"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
               Football. Organised.
-            </p>
+            </h3>
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-[240px]">
-              Purpose‑built academy management software for football academies in Cymru.
+              Purpose‑built academy management software for football academies
+              in Cymru.
             </p>
           </div>
 
@@ -40,7 +48,7 @@ export function SiteFooter() {
                   to="/features"
                   className="text-xs md:text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
-                  Features
+                  Platform Features
                 </Link>
               </li>
               <li>
@@ -48,7 +56,7 @@ export function SiteFooter() {
                   to="/pricing"
                   className="text-xs md:text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
-                  Pricing
+                  Pricing Plans
                 </Link>
               </li>
             </ul>

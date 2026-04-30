@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "../../components/ui/accordion";
 
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
+
 type TierKey = "starter" | "pro" | "enterprise";
 
 const pillClass =
@@ -17,12 +19,14 @@ const pillClass =
 
 const faqs = [
   {
-    question: "Does StatTarian sync with FAW COMET and other governing‑body systems?",
+    question:
+      "Does StatTarian sync with FAW COMET and other governing‑body systems?",
     answer:
       "Yes. StatTarian has a native integration with FAW COMET via a secure ingestion API, allowing player registration and eligibility data to sync automatically. This removes manual admin work and keeps your squad lists accurate across systems.",
   },
   {
-    question: "Can you migrate our data from other platforms (Pitchero, Hudl, spreadsheets)?",
+    question:
+      "Can you migrate our data from other platforms (Pitchero, Hudl, spreadsheets)?",
     answer:
       "Yes. Data migration support is included in Pro and Enterprise plans. We work with you to map, clean, and import your existing data — whether it comes from Pitchero, Hudl, spreadsheets, or other systems — so you can start with a complete and accurate history.",
   },
@@ -47,13 +51,12 @@ export function Pricing() {
   const [recommendedTier] = useState<TierKey>("pro");
 
   return (
-    <main className="pt-16 md:pt-24">
-
+    <main className="pt-12 md:pt-24">
       {/* Hero */}
-      <section className="py-12 md:py-24 bg-background">
+      <HeroSurface className="pt-20 md:pt-32 pb-16 md:pb-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6">
+            <div className="text-center max-w-4xl mx-auto space-y-6 md:space-y-8">
               <div>
                 <span
                   className={pillClass}
@@ -65,14 +68,16 @@ export function Pricing() {
                   Pricing
                 </span>
               </div>
+
               <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Transparent pricing for every academy.
+                Pricing that scales with your academy pathway.
               </h1>
+
               <p
-                className="text-base md:text-xl text-muted-foreground"
+                className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Choose the plan that fits your academy size, structure, and
@@ -81,7 +86,7 @@ export function Pricing() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </HeroSurface>
 
       {/* Pricing Table */}
       <section className="py-8 bg-background">
@@ -138,7 +143,7 @@ export function Pricing() {
                 className="text-3xl md:text-5xl font-bold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Frequently asked questions.
+                What academies ask us most.
               </h2>
             </div>
           </AnimatedSection>

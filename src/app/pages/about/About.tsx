@@ -1,12 +1,19 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { ShieldCheck, Globe, Lock, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ShieldCheck,
+  Globe,
+  Lock,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { DemoCtaSection } from "../../components/marketing/cta/DemoCtaSection";
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { motion } from "motion/react";
 import walesImage from "../../../assets/abstract-training.jpg";
 import founderImage from "../../../assets/founder.jpg";
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
 
 const pillClass =
   "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
@@ -79,40 +86,38 @@ export function About() {
 
   return (
     <main className="pt-16 md:pt-24">
-
-      {/* Hero — Promise-aligned */}
-      <section
-        className="relative py-12 md:py-24 bg-background bg-cover bg-center"
+      {/* Hero — unified surface + spacing */}
+      <HeroSurface
+        className="pt-20 md:pt-32 pb-16 md:pb-24 bg-cover bg-center"
         style={{
           backgroundImage: HERO_IMAGE ? `url(${HERO_IMAGE})` : undefined,
         }}
       >
+        {/* Optional dark overlay if image exists */}
         {HERO_IMAGE && <div className="absolute inset-0 bg-background/80" />}
 
         <div className="relative z-10 container mx-auto px-4">
           <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <div>
-                <span
-                  className={pillClass}
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    backgroundColor: "var(--color-brand-700)",
-                  }}
-                >
-                  About statTarian
-                </span>
-              </div>
+            <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+              <span
+                className={pillClass}
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  backgroundColor: "var(--color-brand-700)",
+                }}
+              >
+                About statTarian
+              </span>
 
               <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Built Inside Academy Football.
               </h1>
 
               <p
-                className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto"
+                className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 statTarian was created by practitioners who understand the
@@ -121,7 +126,7 @@ export function About() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </HeroSurface>
 
       {/* Founder Story — Promise spacing */}
       <section className="py-12 md:py-24 bg-card">
@@ -129,7 +134,6 @@ export function About() {
           <div className="max-w-3xl mx-auto">
             <AnimatedSection>
               <div className="flex flex-col items-center text-center space-y-10">
-
                 <div className="h-40 w-40 rounded-full overflow-hidden bg-muted border border-border shadow-sm ring-2 ring-[var(--color-brand-700)]">
                   <img
                     src={FOUNDER_IMAGE}
@@ -349,7 +353,6 @@ export function About() {
           </AnimatedSection>
 
           <div className="relative max-w-6xl mx-auto">
-
             {/* Mobile arrows */}
             <button
               onClick={() =>

@@ -1,56 +1,58 @@
-import { DemoRequestForm } from '../../components/marketing/forms/DemoRequestForm'
-import { AnimatedSection } from '../../components/marketing/AnimatedSection'
-import { Clock, Mail, ShieldCheck, Users, Workflow } from 'lucide-react'
-import contactBg from '@/assets/contact-bg.jpg'
+import { DemoRequestForm } from "../../components/marketing/forms/DemoRequestForm";
+import { AnimatedSection } from "../../components/marketing/AnimatedSection";
+import { Clock, Mail, ShieldCheck, Users, Workflow } from "lucide-react";
+import contactBg from "@/assets/contact-bg.jpg";
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
 
 const pillClass =
-  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white"
+  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
 export function Contact() {
   return (
     <main className="pt-16 md:pt-24">
-
       {/* HERO */}
-      <section className="py-12 md:py-16 bg-background">
+      <HeroSurface className="pt-20 md:pt-32 pb-16 md:pb-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center max-w-3xl mx-auto space-y-4 md:space-y-6">
+            <div className="text-center max-w-4xl mx-auto space-y-6 md:space-y-8">
               <div>
                 <span
                   className={pillClass}
                   style={{
-                    fontFamily: 'var(--font-heading)',
-                    backgroundColor: 'var(--color-brand-700)',
+                    fontFamily: "var(--font-heading)",
+                    backgroundColor: "var(--color-brand-700)",
                   }}
                 >
                   Book a Demo
                 </span>
               </div>
+
               <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold"
-                style={{ fontFamily: 'var(--font-display)' }}
+                className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Request a Demo
               </h1>
+
               <p
-                className="text-base md:text-xl text-muted-foreground"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
-                We'll set up a 30-minute walkthrough tailored to your
-                academy's structure and needs.
+                We'll set up a 30-minute walkthrough tailored to your academy's
+                structure and needs.
               </p>
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </HeroSurface>
 
       {/* CONTACT SECTION */}
       <section
         className="relative pt-16 pb-10 md:pt-24 md:pb-16"
         style={{
           backgroundImage: `url(${contactBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Darker overlay for readability */}
@@ -58,7 +60,6 @@ export function Contact() {
 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 max-w-6xl mx-auto">
-
             {/* LEFT — FORM */}
             <AnimatedSection>
               <div className="bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-6 md:p-10 shadow-2xl">
@@ -69,15 +70,14 @@ export function Contact() {
             {/* RIGHT — INFO */}
             <AnimatedSection delay={0.2}>
               <div className="space-y-10 md:space-y-12 text-neutral-50">
-
                 {/* What to expect */}
                 <div className="space-y-6">
                   <div>
                     <span
                       className={pillClass}
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        backgroundColor: 'var(--color-brand-700)',
+                        fontFamily: "var(--font-heading)",
+                        backgroundColor: "var(--color-brand-700)",
                       }}
                     >
                       What to Expect
@@ -85,7 +85,7 @@ export function Contact() {
                   </div>
                   <h2
                     className="text-2xl md:text-3xl font-bold"
-                    style={{ fontFamily: 'var(--font-display)' }}
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
                     Your 30-minute demo, explained.
                   </h2>
@@ -98,11 +98,11 @@ export function Contact() {
                       },
                       {
                         icon: Workflow,
-                        text: 'A review of your current workflow and how statTarian can streamline operations across coaching, welfare, fixtures, and communication.',
+                        text: "A review of your current workflow and how statTarian can streamline operations across coaching, welfare, fixtures, and communication.",
                       },
                       {
                         icon: ShieldCheck,
-                        text: 'Live Q&A covering safeguarding, compliance, permissions, and data management.',
+                        text: "Live Q&A covering safeguarding, compliance, permissions, and data management.",
                       },
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-4">
@@ -123,8 +123,8 @@ export function Contact() {
                     <span
                       className={pillClass}
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        backgroundColor: 'var(--color-brand-700)',
+                        fontFamily: "var(--font-heading)",
+                        backgroundColor: "var(--color-brand-700)",
                       }}
                     >
                       Get in Touch
@@ -136,7 +136,9 @@ export function Contact() {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-neutral-50">Email us</div>
+                      <div className="text-sm font-semibold text-neutral-50">
+                        Email us
+                      </div>
                       <a
                         href="mailto:hello@stattarian.com"
                         className="text-sm text-neutral-50 hover:text-primary hover:underline transition-colors"
@@ -151,21 +153,20 @@ export function Contact() {
                       <Clock className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-neutral-50">Response time</div>
+                      <div className="text-sm font-semibold text-neutral-50">
+                        Response time
+                      </div>
                       <div className="text-sm text-neutral-300">
                         We typically respond within one working day.
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </AnimatedSection>
-
           </div>
         </div>
       </section>
-
     </main>
-  )
+  );
 }

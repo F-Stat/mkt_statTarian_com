@@ -11,8 +11,8 @@ interface DemoCtaSectionProps {
 }
 
 export function DemoCtaSection({
-  heading = "Ready to see it in action?",
-  subheading = "Book a 30-minute demo tailored to your academy's needs.",
+  heading = "Are you ready?",
+  subheading = "A 30-minute demo tailored to your academy's setup.No slides. No sales pitch. Just the platform.",
   ctaLabel = "Book a Demo",
   ctaHref = "/contact",
 }: DemoCtaSectionProps) {

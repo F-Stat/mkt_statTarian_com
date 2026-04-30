@@ -104,7 +104,7 @@ export function PricingCard({
       {/* CTA */}
       <Button asChild className="w-full">
         <Link to={`/contact?plan=${tier}`}>
-          {isContactUs ? "Contact Us" : "Get Started"}
+          {isContactUs ? "Contact Us" : "Begin your onboarding"}
         </Link>
       </Button>
     </div>

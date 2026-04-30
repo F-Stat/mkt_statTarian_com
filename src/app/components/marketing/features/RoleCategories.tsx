@@ -14,7 +14,7 @@ const categories = [
     title: "Academy Leadership\n& Operations",
     subtitle: "Directors, Phase Coordinators",
     description:
-      "Total oversight of squads, staff, welfare, and operations — all in one connected system that removes admin drift and keeps your academy running in rhythm.",
+      "See everything across every squad, staff member, and department — without chasing updates. Run your academy with the confidence that nothing is slipping through.",
     image: leadershipImg,
   },
   {
@@ -22,7 +22,7 @@ const categories = [
     title: "Coaching\n& Performance",
     subtitle: "Head Coaches, Coaches, Analysts",
     description:
-      "Session plans, attendance, video, and development insights surfaced instantly — giving coaches more time on the grass and less time chasing information.",
+      "Everything you need before, during, and after a session — in one place. Less time on laptops. More time doing the job.",
     image: coachingImg,
   },
   {
@@ -30,7 +30,7 @@ const categories = [
     title: "Physio\n& Medical",
     subtitle: "Physios, Sports Scientists",
     description:
-      "Screenings, injuries, RTP notes, and medical history stored cleanly and securely — with every update reflected across the academy in real time.",
+      "Every injury, screening, and return-to-play note in one secure record. When a player steps on the pitch, you know exactly where they stand.",
     image: physioImg,
   },
   {
@@ -38,7 +38,7 @@ const categories = [
     title: "Welfare\n& Safeguarding",
     subtitle: "Safeguarding Leads, Welfare Officers",
     description:
-      "A dedicated, access‑controlled space for concerns, welfare notes, and DBS tracking — built to protect young people and support compliant, accountable practice.",
+      "Log concerns, track DBS, and evidence compliance in a space only welfare leads can see. Built for the responsibility the role actually carries.",
     image: welfareImg,
   },
   {
@@ -46,10 +46,13 @@ const categories = [
     title: "Parents\n& Players",
     subtitle: "Parents, Players",
     description:
-      "Fixtures, updates, and secure messaging delivered clearly and reliably — no apps, no noise, and no missed information.",
+      "Fixtures, consent requests, and updates — sent to the right people, at the right time. No WhatsApp groups. No missed messages.",
     image: parentsImg,
   },
 ];
+
+const pillClass =
+  "inline-block min-w-[200px] text-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
 
 export function RoleCategories() {
   const [active, setActive] = useState<string | null>(null);
@@ -57,6 +60,39 @@ export function RoleCategories() {
   return (
     <section className="pt-8 md:pt-8 pb-8">
       <div className="container mx-auto px-4">
+
+        {/* Section Header */}
+        <AnimatedSection>
+          <div className="text-center mb-10 md:mb-12 space-y-3 md:space-y-4">
+            <div>
+              <span
+                className={pillClass}
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  backgroundColor: "var(--color-brand-700)",
+                }}
+              >
+                Built for every role
+              </span>
+            </div>
+            <h2
+              className="text-3xl md:text-5xl font-bold"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              One platform. Every role in your academy.
+            </h2>
+            <p
+              className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              From directors to parents, every role gets exactly what they need
+              — and nothing they don't. Role-based access means the right
+              information reaches the right people, every time.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* Role Cards */}
         <AnimatedSection>
           <div
             className="
@@ -106,16 +142,11 @@ export function RoleCategories() {
                     }}
                   />
 
-                  {/* TEXT BLOCK WITH HIGHER LIFT */}
                   <div
                     className={`
                       absolute inset-0 flex flex-col justify-end p-5
                       transition-transform duration-300
-                      ${
-                        isActive
-                          ? "-translate-y-8"
-                          : "translate-y-0 group-hover:-translate-y-1"
-                      }
+                      ${isActive ? "-translate-y-8" : "translate-y-0 group-hover:-translate-y-1"}
                     `}
                   >
                     <p
@@ -132,16 +163,13 @@ export function RoleCategories() {
 
                     <div
                       className="overflow-hidden transition-all duration-400 ease-out"
-                      style={{
-                        maxHeight: isActive ? "9rem" : "0",
-                      }}
+                      style={{ maxHeight: isActive ? "9rem" : "0" }}
                     >
                       <p className="text-white/80 text-xs leading-relaxed mt-3 border-t border-white/20 pt-3">
                         {cat.description}
                       </p>
                     </div>
 
-                    {/* ARROW — STATIC, NO MOVEMENT */}
                     <div
                       className={`
                         flex items-center gap-1 mt-2 text-primary text-xs font-semibold
@@ -156,9 +184,7 @@ export function RoleCategories() {
                   {isActive && (
                     <div
                       className="absolute inset-0 rounded-2xl pointer-events-none"
-                      style={{
-                        boxShadow: "inset 0 0 0 2px var(--color-primary)",
-                      }}
+                      style={{ boxShadow: "inset 0 0 0 2px var(--color-primary)" }}
                     />
                   )}
                 </button>
@@ -170,9 +196,7 @@ export function RoleCategories() {
             {categories.map((cat) => (
               <button
                 key={cat.key}
-                onClick={() =>
-                  setActive(active === cat.key ? null : cat.key)
-                }
+                onClick={() => setActive(active === cat.key ? null : cat.key)}
                 className={`h-1.5 rounded-full transition-all duration-200 ${
                   active === cat.key ? "w-4 bg-primary" : "w-1.5 bg-white/30"
                 }`}
@@ -181,6 +205,7 @@ export function RoleCategories() {
             ))}
           </div>
         </AnimatedSection>
+
       </div>
     </section>
   );

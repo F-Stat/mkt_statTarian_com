@@ -2,15 +2,22 @@
 
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
 import { ShieldCheck, Lock, Users, FileText } from "lucide-react";
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
 
 const pillClass =
   "inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
+
+const now = new Date();
+const currentMonthYear = now.toLocaleString("en-GB", {
+  month: "long",
+  year: "numeric",
+});
 
 export function Privacy() {
   return (
     <main className="pt-16 md:pt-24 bg-background text-neutral-100 min-h-screen">
       {/* HERO */}
-      <section className="py-12 md:py-24">
+      <HeroSurface className="py-12 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto space-y-4 md:space-y-6">
@@ -41,49 +48,7 @@ export function Privacy() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
-
-      {/* SUMMARY CARDS */}
-      <section className="py-12 md:py-16 bg-card border-y border-border">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <div className="bg-background border border-border rounded-xl p-6 space-y-3">
-                <ShieldCheck className="h-8 w-8 text-primary" />
-                <h3 className="font-bold text-lg">Data Processor</h3>
-                <p className="text-muted-foreground text-sm">
-                  Clubs control their data. statTarian processes it on their
-                  behalf.
-                </p>
-              </div>
-
-              <div className="bg-background border border-border rounded-xl p-6 space-y-3">
-                <Lock className="h-8 w-8 text-primary" />
-                <h3 className="font-bold text-lg">Youth‑Safe</h3>
-                <p className="text-muted-foreground text-sm">
-                  Enhanced protections for minors, including RLS + RBAC.
-                </p>
-              </div>
-
-              <div className="bg-background border border-border rounded-xl p-6 space-y-3">
-                <Users className="h-8 w-8 text-primary" />
-                <h3 className="font-bold text-lg">Parent Visibility</h3>
-                <p className="text-muted-foreground text-sm">
-                  Parents access only their own child’s data.
-                </p>
-              </div>
-
-              <div className="bg-background border border-border rounded-xl p-6 space-y-3">
-                <FileText className="h-8 w-8 text-primary" />
-                <h3 className="font-bold text-lg">No Marketing Use</h3>
-                <p className="text-muted-foreground text-sm">
-                  Children’s data is never used for profiling or marketing.
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      </HeroSurface>
 
       {/* LEGAL CONTENT */}
       <section className="py-12 md:py-24">
@@ -100,7 +65,7 @@ export function Privacy() {
               {/* LEFT COLUMN */}
               <div className="space-y-12">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Last updated:</strong> April 2026
+                  <strong>Last updated:</strong> {currentMonthYear}
                 </p>
 
                 {/* 1 */}

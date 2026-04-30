@@ -1,15 +1,22 @@
 "use client";
 
 import { AnimatedSection } from "../../components/marketing/AnimatedSection";
+import { HeroSurface } from "../../components/marketing/layout/HeroSurface";
 
 const pillClass =
   "inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white";
+
+const now = new Date();
+const currentMonthYear = now.toLocaleString("en-GB", {
+  month: "long",
+  year: "numeric",
+});
 
 export function Terms() {
   return (
     <main className="pt-16 md:pt-24 bg-background text-neutral-100 min-h-screen">
       {/* HERO */}
-      <section className="py-12 md:py-24">
+      <HeroSurface className="py-12 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto space-y-4 md:space-y-6">
@@ -40,7 +47,7 @@ export function Terms() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </HeroSurface>
 
       {/* LEGAL CONTENT */}
       <section className="py-12 md:py-12">
@@ -57,7 +64,7 @@ export function Terms() {
               {/* LEFT COLUMN */}
               <div className="space-y-12">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Last updated:</strong> April 2026
+                  <strong>Last updated:</strong> {currentMonthYear}
                 </p>
 
                 {/* 1 */}
